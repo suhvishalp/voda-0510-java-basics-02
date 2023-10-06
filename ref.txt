@@ -218,34 +218,167 @@ Garbadge Collection
 
 
     Common terms 
-    ------------------
+    -------------------------------------------
 
         POJO - plain old java object 
+            - ordinary java classes 
+            - simple class 
+            - a class that doesn't 
+                - extend to any other class 
+                - contain any annotations 
+                - implement any interface 
 
+
+                public class Employee {
+
+                }
+
+        Java Beans 
+            - it is special pojo class that has below requirements 
+                - implements serializable 
+                - all properties / instance variables are defined as private 
+                - public getter/setter methods 
+                - has a no-arg constructor 
+
+            public class Employee implements serializable {
+
+            }
 
         VO - value object 
 
 
         BO - Business object 
-
+            - classes that represent business entities 
 
         SO - Service object 
+            - classes represents code to perform some business operations 
+            - business logic 
 
-
-        DAO - Data access object 
-
+        DAO - Data access object    
+            - classes represents code to perform db operations 
+            - 
 
         DTO - Data transfer object 
+            - used to represent the structure of data usually exchanged between client-servers 
 
 
-        Java Beans 
+        
 
 
         Spring Beans 
 
 
+   ------------------------------------------- 
 
 
+
+    Control statements 
+        - if 
+
+            if(boolean_expression){
+
+            }
+
+        - if - else 
+
+            if(boolean_expression1){
+                
+            }else {
+
+            }
+
+            
+
+        - if - else if - else 
+
+            if(boolean_expression){
+                
+            }else if(boolean_expression2){
+
+            }
+            ..
+            ..
+            ..
+            else {
+
+            }
+
+
+        - switch case statement 
+
+            switch(expression){     //expression that evaluates to byte, short, int, char, or string 
+
+                case constant1: 
+                    statements;
+                    statements;
+                    break;
+
+                case constant2: 
+                    statements;
+                    statements;
+                    break;
+
+                case constant3:
+                    statements;
+                    statements;
+                    break;
+                ..
+
+                ..
+
+                default :
+                    statements;
+                    statements;
+                   
+            }
+
+
+    Looping statements 
+        - while 
+        - do while 
+        - for 
+        - enhanced for loop 
+
+     
+
+
+
+    Array 
+    ---------
+        - used to store fixed number of elements 
+        - the size of array is fixed 
+        - in java Array is an object 
+
+        a. declare an array variable 
+
+                <<data-type>>[] arr-var-name;
+                int[] numbers;
+                short[] nums;
+                String[] names;
+                double 
+
+                String[] names;
+                String [] names;
+                String []names;
+                String names[];
+
+
+        b. create array object 
+
+                arr-var-name = new <data-type>[size];
+                numbers = new int[5];
+
+
+        c. initialize values 
+
+                numbers[0] = 10;
+                numbers[1] = 20;
+                numbers[2] = 30;
+
+
+        int[] numbers = new int[5];
+
+        int[] numbers = new int[] {21,54,34,54,76,45};
 
 
     Method Overriding 

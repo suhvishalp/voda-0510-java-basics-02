@@ -1,0 +1,258 @@
+
+10 - 11.15 / 11.30  - Session 1         - introduce new concepts
+
+11.45 - 1.00        - Session 2         - continued discussions / demos on the topic of the day 
+
+2.00 to 04.00       - session 3         - assignments / demos / self-study / practice / read 
+
+4.00 to 06.00       - session 4         - q&a, project work
+
+
+
+VM - 
+Environment Setup 
+---------------------
+    - java 12
+    - spring tool suite
+    - node 
+    - VS Code 
+    - mysql community edition + mysql workbench (root)
+    - docker 
+
+
+Language                        Library                             Framework 
+
+Java                            standard libraries                  Spring Framework
+                                i.e. lang, io, jdbc, etc.
+                                log4j, gson, junit, 
+
+
+Python                          NumPy, Pandas                       Django, Flask
+
+C/C++                           stdio.h, conio.h                    ...
+
+JavaScript / TypeScript         JQuery, React                       NextJS, Angular, NuxtJS, NestJS
+
+GoLang                          ----
+
+C#/VB                           ---
+
+    |                               |                                   |
+programming                     Simply the tasks                    standardise the process 
+capabilities     
+
+
+
+NodeJS
+    - execution env for js code 
+
+
+Testing tools / libraries 
+
+Package managers / Build tools
+    - maven
+    - gradle 
+
+CICD tools 
+    - jenkins 
+
+VCS Tools 
+    - git 
+    - gitlab 
+
+
+
+
+Java 
+----------
+
+    .java ----> java compiler -----------------------> .class 
+                converts your javacode into ByteCode
+
+
+    - ByteCode is understandable only to JVM
+
+    JVM - Java Virtual Machine 
+        - responsible to execute the bytecode on the given platform 
+
+    JRE - Java Runtime Environment
+        - JVM + standard libraries 
+
+    JDK - Java Development Kit 
+        - JRE + development tools i.e. javac, jar, etc. 
+
+
+========================
+Explore: 1. JVM Architecture 
+            - Class Loader in JVM 
+                    - loading, linking, initialization 
+            - execution engine 
+
+         2. Garbadge Collection 
+            https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html#t2
+
+         3. Naming Conventions 
+            https://www.oracle.com/java/technologies/javase/codeconventions-introduction.html
+
+        4. Data types, operators in java 
+
+========================
+
+
+    Java is a object oriented programming language 
+
+
+
+
+    - Variables in java 
+        - store values 
+
+        1. Local Variables 
+                - declared inside a method, constructor  
+                - don't have default values, must be initialized before its use 
+                - memory for all the local variables will be allocated when the method is invoked, and the detroyed when the method finishes its execution 
+
+
+        2. Instance Variables 
+                - declared inside a class, (outside methods)
+                - whenever a new object is created (using 'new' keyword), memory for all the instance 
+                    variables will be allocated, destroyed when the object is deleted 
+                - instance variables have default values 
+                    - i.e. for numbers = 0
+                        for booleans = false 
+                        for reference types = null 
+                - we can use the access modifiers i.e. public, private, protected, default 
+
+                        - defualt - the members will be accessible anywhere within the same 'package'
+                        - public - accessible everywhere 
+                        - private - accessible only within the class 
+                        - protected - accessible only within the class and the subclass 
+
+        3. Static Variables 
+                - declared inside a class, using the 'static' keyword
+                - only 1 copy of static variable will be allocated per class 
+                - when the class is loaded, memory for static variables will be allocated 
+                - define the accessiblity using the modifiers i.e. public, private, protected 
+
+
+Garbadge Collection 
+    - removes the unreferenced objects from the memory 
+
+
+    static keyword 
+        - static variables 
+
+        - static methods 
+
+        - static class 
+
+    final keyword 
+        - final variables
+            - a final variable is constant variables, once the value is assigned you cannot change it  
+
+        - final methods 
+            - a final method cannot be overridden in its subclass 
+
+        - final class 
+            - a final class cannot be subclassed 
+
+
+    Java Keyboard inputs 
+    ------------------------
+
+            1. using Scanner class 
+
+            2. using IO classes 
+
+            3. using Console class 
+
+
+
+    Data types 
+    ----------------
+        primitive data types 
+            - hold / represent values directly 
+
+                byte        1 byte              -128 to 127
+
+                short       2 bytes             ..
+
+                int         4 bytes             ..
+
+                long        8 bytes 
+
+                float       4 bytes 
+
+                double      8 bytes 
+
+                char        1 byte 
+
+                boolean     1 bit
+
+        Refernece types 
+            - all the class, interface, enums type variables are called reference types 
+            - stores ref to the memory 
+
+                String str; 
+                Employee employee;
+
+
+        Wrapper classes 
+        --------------------
+            - for each primitive type i.e. int, char etc. there is a corresponding reference type available i.e. Integer, Character 
+
+
+                    byte                Byte 
+                    short               Short 
+                    int                 Integer 
+                    long                Long 
+                    float               Float 
+                    double              Double 
+                    char                Character 
+                    boolean             Boolean 
+
+            - wrapper classes provide various methods to perform typecasting, and a few operations 
+
+
+
+
+
+    Common terms 
+    ------------------
+
+        POJO - plain old java object 
+
+
+        VO - value object 
+
+
+        BO - Business object 
+
+
+        SO - Service object 
+
+
+        DAO - Data access object 
+
+
+        DTO - Data transfer object 
+
+
+        Java Beans 
+
+
+        Spring Beans 
+
+
+
+
+
+
+    Method Overriding 
+    -------------------
+
+
+
+
+
+   

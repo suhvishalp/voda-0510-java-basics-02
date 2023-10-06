@@ -1,0 +1,10 @@
+package com.demo.model;
+
+public class Employee {
+
+	 int empId;
+	 String name;
+	 double salary; 
+	
+	
+}

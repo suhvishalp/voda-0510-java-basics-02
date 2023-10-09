@@ -7,16 +7,16 @@ public class TestStudentMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-//		Student student1 = new Student(101, "Rohit", 33);
-//
-//		Student student2 = new Student(102, "Mohit", 44);
-//		
-//		Student student3 = new Student();
-//		student3.setStudId(103);
-//		student3.setName("Om");
-//		student3.setMarks(39);
+		Student student1 = new Student(101, "Rohit", 33);
 		
-		String str = "101, Vishal, 54";
+		Student student2 = new Student(101, "Rohit", 33);
+		
+		
+		if (student1.equals(student2))
+			System.out.println("Both students are equal");
+		else 
+			System.out.println("not equal");
+
 		
 	}
 

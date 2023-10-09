@@ -556,6 +556,48 @@ Garbadge Collection
         - compile time Polymorphism / static binding 
 
 
+    Object class 
+    -------------------
+        - Object class is by default a super most class for all the classes in java 
+        - everyclass is exclusively subclass of object class 
+
+            Object class methods
+            ---------------------
+                - int hashCode()
+                - boolean equals(Object o)
+                - String toString() 
+
+
+
+
+                                Object 
+                                  |
+        ------------------------------------------------------------------------------
+        Student                 System          ArrayList           Scanner         ..
+        Employee                                LinkedList
+        CustomClass...
+
+
+    Overriding the toString() method 
+    ----------------------------------
+        - Returns a string representation of the object. In general, the toString method returns a string that "textually represents" this object.
+        - It is recommended that all subclasses override this method.
+        - whenever we use the ref variable in an expression, by default it calls the toString() on that object 
+
+    Overriding the equals() method 
+    -------------------------------------
+        - you can override equals() method to provide logic to compare two objects of same type 
+        
+
+        **equals() contract 
+
+        Student student = new Student();
+
+        Object object = new Student();        //valid
+
+
+    **a variable of parent class can reference to an object of clild class 
+
 
 
     Enumerator, Iterator, ListIterator  

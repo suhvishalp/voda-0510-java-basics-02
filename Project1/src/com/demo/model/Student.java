@@ -1,5 +1,7 @@
 package com.demo.model;
 
+import java.util.Objects;
+
 public class Student {
 
 	private int studId;
@@ -57,6 +59,72 @@ public class Student {
 		this.marks = marks;
 	}
 
+	@Override
+	public String toString() {
+		return "Student [studId=" + studId + ", name=" + name + ", marks=" + marks + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(marks, name, studId);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		
+		Student other = (Student) obj;
+		return marks == other.marks && Objects.equals(name, other.name) && studId == other.studId;
+	}
+	
+	
+	
+	
+	
+	
+	
+//	//override the equals() 
+//	public boolean equals(Object other) {
+//		//logic to compare this object with the 'other' object 
+//		
+//		if(other instanceof Student) {
+//			Student otherStudent = (Student)other;
+//			
+//			if(this == other)
+//				return true;
+//			
+//			if(other == null)
+//				return false;
+//			
+//			if(this.studId == otherStudent.getStudId() && 
+//					this.name.equals(otherStudent.getName()) && 
+//					this.marks == otherStudent.getMarks()) {
+//				return true;
+//			}
+//		
+//		}
+//		
+//		return false;
+//		 
+//	}
+//	
+	
+	
+	
+	
+	
+
+//	//override the toString()method 
+//	public String toString() {
+//		return this.studId + " " + this.name + " " + this.marks;
+//	}
+//	
+	
 	
 	
 }

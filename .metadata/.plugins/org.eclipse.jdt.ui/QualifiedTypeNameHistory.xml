@@ -6,4 +6,5 @@
     <fullyQualifiedTypeName name="java.util.Comparator"/>
     <fullyQualifiedTypeName name="java.lang.Comparable"/>
     <fullyQualifiedTypeName name="UserMainCode"/>
+    <fullyQualifiedTypeName name="com.demo.model.Student"/>
 </qualifiedTypeNameHistroy>

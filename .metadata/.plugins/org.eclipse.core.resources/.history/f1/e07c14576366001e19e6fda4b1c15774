@@ -1,0 +1,14 @@
+package com.demo.main;
+
+import com.demo.model.Student;
+
+public class TestStudentMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Student student1 = new Student();
+
+	}
+
+}

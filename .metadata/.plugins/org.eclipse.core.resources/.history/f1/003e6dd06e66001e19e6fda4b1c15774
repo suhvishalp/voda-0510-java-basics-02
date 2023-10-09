@@ -1,0 +1,28 @@
+package com.demo.main;
+
+public class ArithOp {
+	
+	
+	public static void arithAdd(int a, int b) {
+		System.out.println("method 1");
+		int sum = a + b;
+		System.out.println("Sum : " + sum);
+		
+	}
+	
+	public static void arithAdd(byte a, byte b) {
+		System.out.println("method 2");
+		byte sum = (byte) (a + b);
+		System.out.println("Sum : " + sum);
+	}
+	
+	public static void main(String[] args) {
+		
+		int x = 10;
+		int y = 20;
+		
+		arithAdd(x, y);
+		
+	}
+
+}

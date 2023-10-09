@@ -1,0 +1,39 @@
+package com.demo.model;
+
+public class Student {
+
+	private int studId;
+	private String name;
+	private int marks;
+	
+	public Student() {
+		super();
+		System.out.println("Student object is created!");
+	}
+
+	public int getStudId() {
+		return studId;
+	}
+
+	public void setStudId(int studId) {
+		this.studId = studId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getMarks() {
+		return marks;
+	}
+
+	public void setMarks(int marks) {
+		this.marks = marks;
+	}
+	
+	
+}

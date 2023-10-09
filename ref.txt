@@ -381,6 +381,188 @@ Garbadge Collection
         int[] numbers = new int[] {21,54,34,54,76,45};
 
 
+
+
+      java.util.Arrays class 
+      -----------------------------
+        - This class contains various methods for manipulating arrays (such as sorting and searching). This class also contains a static factory that allows arrays to be viewed as lists.
+
+
+    Java OOPS 
+    ----------------
+
+        Encapsulation 
+            - binding data & logic together 
+
+        Abstraction 
+            - hiding the complexities from outside world 
+            - hide unnecessary details from the outside world 
+
+        Inheritance 
+            - a class can be derived from another class 
+            - the members of the parent class are inherited by the child class 
+            - reusability 
+            - maintainability 
+            - extendibility 
+
+                        class Person {
+                            String name;
+                            int age; 
+                            Date DOB; 
+                            ...
+                            //
+                            //
+
+                            //
+                        } 
+
+                        class Employee extends Person {
+                            int empId;
+                            double salary;
+                        }
+
+        Polymorphism 
+            - many forms of the same interface depending on the type of object the variable is pointint to 
+
+            
+
+                        class Car {
+                            //
+                            //
+                            //
+                            //
+                            //
+                            public void move(){
+                                //
+                            }
+                        }
+
+                        class BMWCar extends Car{
+                            //override
+                            public void move(){
+                                //child specific behavior of move method
+                            }
+                        }
+
+                        class MercedesCar extends Car {
+                            //override
+                            public void move(){
+                                //child specific behavior of move method
+                            }
+                        }
+
+
+                        Car car = null;
+
+
+
+        Class 
+        --------
+            - a class is a user defined data type 
+            - a class is a blueprint for objects 
+            - ecapsulate data and logic together 
+
+
+        Object 
+        --------
+            - an object is an instance of a class 
+            - using 'new' keyword we can create an object of a class 
+
+
+            class Customer {
+
+                //static variable 
+                //final variables 
+                //instance variables 
+
+                //constructors 
+
+                //instance methods
+
+                //abstract methods  
+            
+                //inner class 
+            }
+
+            class Product {
+
+            }
+
+            class Employee {
+
+            }
+
+
+    Constructor 
+    -------------
+        - special function / method which has the same name as the class 
+        - this function is invoked only once, whenever the object of this class is created 
+        - used to initialize values for instance members 
+        - a class can have multiple constructors, 
+            - class should have at least a no-arg constructor 
+        
+
+        this keyword 
+        --------------
+            - this() constructor 
+                - it is used to invoke another constructor whithin the same class 
+                - call this 'this()' constructor must be the first line 
+
+            - this 
+                - used to access the members of the same class 
+
+
+    ========================
+    Explore: 
+        - private constructors and its usage 
+            - https://www.baeldung.com/java-private-constructors
+
+        - factory methods in java 
+            - 
+
+        - method overloading in java 
+
+
+    ==========================
+
+
+
+
+        public class Employee {
+
+            private int empId;
+            private String name;
+
+            public Employee(){      //constructor 
+
+            }
+
+            public Employee(int id, int name){
+                this.empId = id;
+                this.name  = name;
+            }
+
+        }
+
+
+    a Proper encapsulated class / tightly encapsulated class 
+        - when a class has all instance variables defined as private 
+            and accessible through the getter/setters only 
+
+
+    Method Overloading 
+    --------------------
+        - a class can contain multiple methods with the same name but the parameteres should be diff 
+        - compile time Polymorphism / static binding 
+
+
+
+
+    Enumerator, Iterator, ListIterator  
+    -------------------------------------
+
+
+
     Method Overriding 
     -------------------
 

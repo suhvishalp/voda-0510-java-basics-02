@@ -7,4 +7,11 @@
     <fullyQualifiedTypeName name="java.lang.Comparable"/>
     <fullyQualifiedTypeName name="UserMainCode"/>
     <fullyQualifiedTypeName name="com.demo.model.Student"/>
+    <fullyQualifiedTypeName name="Customer"/>
+    <fullyQualifiedTypeName name="Address"/>
+    <fullyQualifiedTypeName name="Employee"/>
+    <fullyQualifiedTypeName name="java.lang.StringIndexOutOfBoundsException"/>
+    <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
+    <fullyQualifiedTypeName name="com.demo.repositories.EmployeeRepository"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

@@ -600,16 +600,339 @@ Garbadge Collection
 
 
 
+    Inheritance 
+    -----------------
+        - allows to create a subclass, inheriting all the non-private members of the super class 
+        - using 'extends' keyword we can inherit a class from another class 
+        - inheritance creates is-a relationship 
+
+        public class Person {
+            //instance variables 
+        
+            ..
+
+            ..
+        }
+
+        public class Employee extends Person {
+
+                //...
+
+                ...
+
+                ..
+
+        }
+
+
+                    Account 
+                        - accNo 
+                        - cusotmerID 
+                        - type 
+                        - interestRate
+                        - createAcc() / debit() / credit()
+                     |
+        ----------------------------------------------------------------------------
+        SavingAcc           CurrentAcc              RecurringDepAcc         LoanAcc
+                                                                                - loanNo
+                                                                                   |
+                                                                        ---------------------------
+                                                                        PersonalLoanAcc     HomeLoanAcc     
+
+
+
+    Has-A relationship / Ojbect Relationships
+    ----------------------------
+        - objects may have relationship with each other 
+
+        a. Composition 
+
+
+        b. Aggregation 
+            
+            - the lifecycle of object is tied up 
+
+                class Engine {
+
+                }
+
+                class Car {
+
+                    Engine engine;
+                }
+
+
+        c. Association 
+
+                public class Book {                         public class Author {
+                    int bookId;                                     int authorId;
+                    String title;                                   String name;
+                    Author author;
+
+                }                                           }
+
+
+    class {
+        instance variables
+        constructor 
+        instance methods 
+        ...
+        ..
+    }
+
+
+    Interface 
+    --------------------
+        - similar to a class, but it describes only abstract methods 
+        - interface contains only 'public abstract' methods and 'public static final' variables 
+        - interfaces are used to define set of requirements that a class has to implement 
+        - a class must implement an interface and override the abstract methods
+
+        interface <<InterfaceName>>{
+
+                public static final variables;
+
+                public abstract methods;
+
+        }
+
+        interface Taxable {
+            public abstract void calcTax(double intRate);
+        }
+
+
+        class ClothingProduct implements Taxable{
+
+            //override the abstract methods of the interface 
+            public void calcTax(double intRate){
+                //define the logic 
+            }
+        }
+
+        Taxable product = new ClothingProduct();
+
+
+        **A variable of type interface can reference to an object of its implementation class 
+
+
+    Abstract classes 
+    -------------------
+        - abstract classes are used to act just a superclass, representing data & code to be inherited to the subclasses 
+        - using 'abstract' keyword we can declare abstract class
+        - we cannot instantiate abstract classes 
+            - we cannot create object of abstract class 
+
+        - if a class has 'abstract' methods, then it must be marked as abstract
+            - the abstract methods of a class must be overridden by its immediate subclass 
+
+
+        
+
+        public abstract class Car {
+
+            //instance variables 
+            //static variables 
+
+            //constructor 
+
+            //instance methods 
+
+            public abstract void move();
+
+        }
+
+        public class BMWCar extends Car {
+
+            public BMWCar(){
+                
+            }
+
+            //override the superclass methods 
+            public void move(){
+                sysout("BMW Car moves fast")
+            }
+        }
+
+
+        public class MercedesCar extends Car {
+
+            //override the superclass methods 
+            public void move(){
+                sysout("MercedesCar moves fast and smooth");
+            }
+        }
+
+        Car car = new BMWCar();
+        car.move();
+
+        car = new MercedesCar();
+        car.move();
+
+    Method Overloading 
+    ---------------------
+        - writing multiple methods with same name but diff parameters inside the same class 
+
+
+    Method Overriding 
+    --------------------
+        - redefining a super class method in the subclass using the same method signature 
+        - it is used to define child specific behavior of the superclass method 
+        - in method overriding, the name, parameters and return type must be same
+
+
+        -Rules for method overriding 
+        --------------------------------
+            - 1. only the inherited methods (non-private) can be overridden 
+                    Note: private and static method cannot be overridden 
+
+                    public class A {
+                       public void method(){
+
+                       }
+                    }
+
+                    public class B extends A{
+
+                    }
+
+            2. the overridden method can not have restrictive access in the subclass 
+
+                    public class A {
+                       protected void method(){
+
+                       }
+                    }
+
+                    public class B extends A{
+                        public void method(){
+
+                       }
+                    }
+
+            3. the overridden method must have the exact* method signature in the subclass 
+                    Note: the return type in the overridden method can be a subtype
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Abstract Method 
+    ----------------------
+        - a method without definition 
+        - a method declared using 'abstract' keyword 
+
+
+   
+   
+        interface EmploeyeRepository {
+
+            public abstract void addEmployee(Employee employee);
+            
+            public abstract Employee getEmployee(int empId);
+            
+            public abstract List<Employee> getAllEmployees();
+            
+            public abstract void deleteEmployee(int empId);
+
+        }
+
+        public class EmploeyeRepositoryImpl implements EmploeyeRepository{
+
+            //must override all the methods of the interface
+            public  void addEmployee(Employee employee){
+
+            }
+
+            public  List<Employee> getAllEmployees()
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Arrays are fixed length / size group of elements 
+
+
+    Collection Framework 
+    --------------------------
+        - java.util provides various data structures called as collections
+        - Collection classes offer various DS to allow creating dynamic group of objects 
+        - collections are set of reusable datastructures which are used to create group of objects 
+
+
+                    Collection Interface
+                         |
+                         |
+          ------------------------------------------------------------------------------  
+          List Interface                    Set Interface               Queue Interface 
+             |                                  |                               |
+          ArrayList                         HashSet                             |
+          LinkedList                        LinkedHashSet               ----------------------------------------
+          Vector                            TreeSet                     Deque Interface         BlockingQueue Interface
+          Stack
+
+
+     List list = new ArrayLists()
+     ArrayList list = new ArrayList();
+
+
+    ArrayList
+    ------------
+        - ArrayList is one of the implementation class of List Interface 
+        - used to list of objects 
+        - the initial capacity of arraylist is 10
+
+        ArrayList list = new ArrayList();
+        list.add(10);
+        list.add(30);
+        list.add(40);
+        list.add(60);
+
+
+
+
+
     Enumerator, Iterator, ListIterator  
     -------------------------------------
 
 
 
-    Method Overriding 
-    -------------------
+
+    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
 
 
 
 
 
    
+
+   class Member {
+
+
+        public static Member findMember(ArrayList<Member> list, int id){
+
+        }
+
+   }

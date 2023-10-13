@@ -687,6 +687,7 @@ Garbadge Collection
         - interface contains only 'public abstract' methods and 'public static final' variables 
         - interfaces are used to define set of requirements that a class has to implement 
         - a class must implement an interface and override the abstract methods
+        **- an interface can extend from several interfaces
 
         interface <<InterfaceName>>{
 
@@ -701,7 +702,7 @@ Garbadge Collection
         }
 
 
-        class ClothingProduct implements Taxable{
+        class ClothingProduct implements Taxable, AnotherInterface{
 
             //override the abstract methods of the interface 
             public void calcTax(double intRate){
@@ -813,23 +814,13 @@ Garbadge Collection
                     Note: the return type in the overridden method can be a subtype
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     Abstract Method 
     ----------------------
         - a method without definition 
         - a method declared using 'abstract' keyword 
+
+
+     ..
 
 
    
@@ -879,19 +870,180 @@ Garbadge Collection
     --------------------------
         - java.util provides various data structures called as collections
         - Collection classes offer various DS to allow creating dynamic group of objects 
-        - collections are set of reusable datastructures which are used to create group of objects 
+        - collections are set of dynamic and reusable datastructures which are used to create group of objects 
 
-
-                    Collection Interface
+                    Iterable<E> interface 
+                        |
+                        |
+                    Collection<E> interface
+                         |
+                         |-> boolean add(E e)
+                         |-> boolean	addAll(Collection<? extends E> c)
+                         |-> void	clear()
+                         |-> boolean	contains(Object o)
+                         |-> boolean	remove(Object o)
                          |
                          |
           ------------------------------------------------------------------------------  
-          List Interface                    Set Interface               Queue Interface 
+          List<E> Interface                 Set<E> Interface               Queue Interface 
              |                                  |                               |
+             |
           ArrayList                         HashSet                             |
           LinkedList                        LinkedHashSet               ----------------------------------------
           Vector                            TreeSet                     Deque Interface         BlockingQueue Interface
           Stack
+
+
+
+   Collection<T> interface
+    - this is the supermost interface in the collection hierarchy that describes few common methods 
+    - ie.                |-> boolean add(E e)
+                         |-> boolean	addAll(Collection<? extends E> c)
+                         |-> void	clear()
+                         |-> boolean	contains(Object o)
+                         |-> boolean	remove(Object o)
+
+    List<E> Interface 
+    ------------------
+        - models an indexed collection of elements, it allows duplicate elements 
+        - List Implementation classes are ...
+            1. ArrayList<E> 
+                - internally uses "resizable array" as a datastructure 
+                - the initial capacity of arraylist is 10
+                - not synchronized
+
+            2. LinkedList<E> 
+                - internally uses "double linked list" as a datastructure 
+                - the initial capacity is 0
+                - good for lists that require freqent insertions, deletions
+
+            3. Vector<E> 
+              - internally uses resizable array as a datastructure 
+              - the initial capacity of arraylist is 10
+              - vector is synchronized, so it is thread safe
+
+            4. Stack<E>
+              - internally uses resizable array as a datastructure 
+              - offers LIFO approach   
+
+
+    Set<E> Interface 
+    ---------------------
+        - Set interface models a collection of object that doesn't allow duplicate elements 
+        - whenever we add a new element, it first compares the element with all objects (using their equals() and hashCode() ) in the set, 
+            if it doesn't exisit then only the new element will be added 
+        - Note: if you create a set of custom objects, make sure you implement the hashCode() and equals() methods correctly 
+        - Set Implementation classes -- 
+
+            1. HashSet<E> 
+                - doesn't guarantee order of insertion 
+                - internally uses 'HashTable' structure 
+
+            2. LinkedHashSet<E> 
+                - stores elements as per the insertion order 
+                - uses 'HashTable+double linked list' data strcuture 
+            
+            3. TreeSet<E> 
+                - maintains the sorted order of elements 
+                - uses 'balanced tree' data structure 
+
+
+    hashCode()
+        - its an integer number represening the object; 
+        - The default implementation of the hashCode method is provided by the Object class, 
+                which returns a unique integer value for each object based on its memory address.
+
+
+    equals() and hashCode() contract 
+    -----------------------------------
+        - if two objects are equal to each other based on equals() method, 
+                then the hash code must be the same
+        - unequal objects may have the same hashCode
+
+
+    Natural Ordering 
+    ---------------------
+        - natural ordering is the default ordering of elements while sorting in array / collection 
+        - if you create a collection of custom objects, and want them sorted, then you must define 
+            the natural ordering of the elements 
+
+        - using below two interfaces we can define natural ordering of custom objects 
+        - 1.  interface Comparable
+
+                    interface Comparable<E> {
+                        int compareTo(E obj);
+                    }
+
+                    class Student implemets Comparable<Student> {
+                        //
+                        //
+                        int marks;
+
+                        public int compareTo(Student otherStudent){
+                            
+                            //return a compare value
+                            if(this.marks > otherStudent.marks)
+                                return 1;
+                            else if (this.marks == otherStudent.marks)
+                                return 0;
+                            else 
+                                return -1;
+                        }
+                    }
+
+        - 2.  interface Comparator
+                - this is used to create external comparators 
+
+
+                public class StudentNameComparator implements Comparator<Student>{
+
+                    public int compare(Student s1, Student s2){
+                            //logic to return a compare value
+                    }
+                }
+    
+
+    **Compare Value 
+        - its an integer number 
+
+            
+            e1.compareTo(e2)
+            if first object is > second object         : return 1 or positive number 
+            if first object is < second object         : return -1 or negative number 
+            if both are equal                          : return 0
+
+
+   
+    Create a list 
+    ------------------
+
+        - non-generic list 
+
+            ArrayList list = new ArrayList();
+            List list = new ArrayList();
+            List list =  new LinkedList();
+
+        - generic list 
+
+            ArrayList<Integer> list = new ArrayList<>();
+            List<String> listNames = new ArrayList<>();
+
+            List<Integer> list = new LinkedList<>();
+
+
+
+    Create a Set
+
+            Set set = new HashSet();
+            Set<Integer> set = new HashSet();
+
+
+
+
+
+
+
+
 
 
      List list = new ArrayLists()
@@ -916,7 +1068,18 @@ Garbadge Collection
 
     Enumerator, Iterator, ListIterator  
     -------------------------------------
+        Iterator 
+            - common object for iterating over any type of collection i.e list, set, queue etc. 
+            - allows to iterate collection only in forward direction 
 
+        ListIterator 
+            - specific to Lists, used to iterator over lists 
+            - has next() and previous() methods, which allow to iterate in both directions 
+
+        
+        Enumeration 
+            - this is also used to iterate over collection 
+            - Collections.enumeration(collection) creates the enumerator 
 
 
 

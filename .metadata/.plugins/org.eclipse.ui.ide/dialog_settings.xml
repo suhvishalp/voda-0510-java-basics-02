@@ -43,6 +43,9 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/Users/vishalshah/git/voda-0510-car-pooling-req-04"/>
+			<item value="/Users/vishalshah/git/voda-0510-car-pooling-req-03"/>
+			<item value="/Users/vishalshah/git"/>
 			<item value="/Users/vishalshah/git/voda-0510-car-pooling-req-02"/>
 			<item value="/Users/vishalshah/git/voda-0510-java-basics-02"/>
 		</list>

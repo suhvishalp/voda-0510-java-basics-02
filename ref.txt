@@ -885,13 +885,23 @@ Garbadge Collection
                          |
                          |
           ------------------------------------------------------------------------------  
-          List<E> Interface                 Set<E> Interface               Queue Interface 
+          List<E> Interface                 Set<E> Interface               Queue<E> Interface 
              |                                  |                               |
-             |
-          ArrayList                         HashSet                             |
+             |                                  |                               |-->LinkedList<E>
+          ArrayList                         HashSet                             |-->PriorityQueue<E>
+                                                                                |
           LinkedList                        LinkedHashSet               ----------------------------------------
-          Vector                            TreeSet                     Deque Interface         BlockingQueue Interface
-          Stack
+          Vector                            TreeSet                     Deque<E> Interface         BlockingQueue<E> Interface
+          Stack                                                             |                                  |
+                                                                            |                           ArrayBlockingQueue<E> 
+                                                                            |
+                                                                        --------------------------------------
+                                                                       ArrayDeque<E>       BlockingDeque<E> interface 
+
+
+
+             
+
 
 
 
@@ -946,6 +956,15 @@ Garbadge Collection
             3. TreeSet<E> 
                 - maintains the sorted order of elements 
                 - uses 'balanced tree' data structure 
+
+
+     Queue<E> Interface 
+     ---------------------
+        - FIFO approach 
+        - it models a collection in the form of a queue that has FIFO approach 
+
+                |       |       |       |       |       |       |
+
 
 
     hashCode()
@@ -1080,6 +1099,80 @@ Garbadge Collection
         Enumeration 
             - this is also used to iterate over collection 
             - Collections.enumeration(collection) creates the enumerator 
+
+
+
+        Queue<E> Interface methods 
+        -----------------------------
+
+            insert the element                  add(E e)                    offer(E e)
+
+            remove the element                  remove()                    poll()
+
+            inspect / fetch the element         element()                   peek()
+
+
+        Deque<E> Interface 
+            - represents a double headed queue 
+
+            insert the element                  add(E e)                    offer(E e)
+                                                addFirst(E e)               offerFirst(E e)
+
+            remove the element                  remove()                    poll()
+                                                removeFirst()               pollFirst()
+
+            inspect / fetch the element         element()                   peek()
+                                                peekFirst()                 peekLast()
+
+
+       BlockingQueue<E> Interface methods 
+        -----------------------------
+
+            insert the element                  add(E e)                    offer(E e)          put(E e)
+
+            remove the element                  remove()                    poll()              take()
+
+            inspect / fetch the element         element()                   peek()
+
+
+        
+        Map<K, V> Interface 
+        --------------------
+            - models a collection of elements of objects in the form of key-value pairs 
+            - the key can be of any type, the value also can be of any type 
+            - cannot have duplicate key, all the keys should be unique 
+
+            - Map implementation classes are... 
+
+                1. HashTable<K,V>
+                        - doesn't allow null key 
+                        - synchronized
+
+                2. HashMap<K,V>
+                        - allows one null key 
+                        - not synchronized
+
+                3. LinkedHashMap<K,V> 
+                        - maintains order of insertion by keys 
+                
+                4. TreeMap<K,V>
+                        - maintains sorted order of keys based on their natural ordering 
+
+
+            Map<Integer, String> map = new HashMap<>()
+            Map<Integer, String> map = new LinkedHashMap<>()
+            Map<Integer, String> map = new TreeMap<>()
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,5 +1,6 @@
 package com.demo;
 
+import com.demo.exceptions.EmployeeNotFoundException;
 import com.demo.model.Employee;
 import com.demo.repositories.EmployeeRepository;
 import com.demo.repositories.EmployeeRepositoryImpl;
@@ -11,7 +12,9 @@ public class TestEmployeeMain {
 
 		//EmployeeRepositoryImpl class uses arraylist to store the data 
 		
-		EmployeeRepository empRepo = new EmployeeRepositoryImpl();		 
+		EmployeeRepository empRepo = new EmployeeRepositoryImpl();		
+		
+		
 		
 		
 		//add a new employee
@@ -30,9 +33,15 @@ public class TestEmployeeMain {
 		Employee emp5 = new Employee(105, "Adarsh", 2600.00);
 		empRepo.addEmployee(emp5);
 		
-		Employee empResult = empRepo.getEmployee(104);
-		System.out.println("Result = " + empResult);
-		
+		try {
+			Employee empResult = empRepo.getEmployee(144);
+			
+			System.out.println("Employee found = " + empResult);
+			
+			
+		}catch(EmployeeNotFoundException ex) {
+			System.out.println(ex.getMessage());
+		}
 	}
 
 }

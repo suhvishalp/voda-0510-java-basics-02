@@ -2,6 +2,7 @@ package com.demo.repositories;
 
 import java.util.ArrayList;
 
+import com.demo.exceptions.EmployeeNotFoundException;
 import com.demo.model.Employee;
 
 public class EmployeeRepositoryImpl implements EmployeeRepository{
@@ -20,15 +21,22 @@ public class EmployeeRepositoryImpl implements EmployeeRepository{
 	}
 
 	@Override
-	public Employee getEmployee(int empId) {
+	public Employee getEmployee(int empId) throws EmployeeNotFoundException{
 		// TODO Auto-generated method stub
+		
+		Employee employee = null;
 		
 		for(Employee emp : listEmployees) {
 			if(emp.getEmpId() == empId)
-				return emp;
+				employee = emp;
+				return employee;
 		}
 		
-		return null;
+		if (employee == null)
+			throw new EmployeeNotFoundException();
+		
+		return employee;
+		
 	}
 
 	@Override
@@ -38,7 +46,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository{
 	}
 
 	@Override
-	public void deleteEmployee(int empId) {
+	public void deleteEmployee(int empId) throws EmployeeNotFoundException {
 		// TODO Auto-generated method stub
 		Employee emp = getEmployee(empId);
 		

@@ -1,15 +1,21 @@
-package com.demo.model;
 
-public class Employee {
+
+public class Employee implements Comparable<Employee> {
 	
 
 	private int empId;			//fields / instance variables / properties 
 	private String name;
 	private double salary;
 	
-	public Employee() {			//no-arg constructor
-		
-		//initialize values for the instance variables 
+	public Employee() {
+		super();
+	}
+
+	public Employee(int empId, String name, double salary) {
+		super();
+		this.empId = empId;
+		this.name = name;
+		this.salary = salary;
 	}
 
 	public int getEmpId() {
@@ -35,6 +41,18 @@ public class Employee {
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
+
+	@Override
+	public int compareTo(Employee o) {
+		// TODO Auto-generated method stub
+		if(this.getSalary() > o.getSalary())
+				return 1;
+		else if (this.getSalary() == o.getSalary())
+				return 0;
+		else 
+			return -1;
+	}
+	
 	
 	
 	

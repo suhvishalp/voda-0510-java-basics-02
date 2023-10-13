@@ -1164,6 +1164,144 @@ Garbadge Collection
             Map<Integer, String> map = new TreeMap<>()
 
 
+        Iterate over a Map 
+        -----------------------
+
+                Collection<T> values()
+
+                Set<K> keySet();
+
+                entrySet()
+
+
+    Exception Handling 
+    ----------------------
+        - exception is an abnormal event that might occur during the program execution 
+
+
+            - Compile time errors 
+                    - invalid code syntax 
+                    - invalid variables 
+                    - incomplete types 
+                    - misspelling 
+
+            - Expcetion
+                - abnormal event that occurs at run time 
+                    i.e. input is invalid, code logic is incorrect, file/db connection fails, dependencies fails etc. 
+
+
+            - Java allows to handle such exceptions and do the needful as corrective steps 
+
+            - to handle the exception 
+                1. find the problem - hit the exception 
+                2. inform that the problem has occured - throw the exception
+                3. receive the information about the problem - catch the exception 
+                4. take corrective actions - handle the exception  
+
+        Exception class hierarchy
+        ------------------------------
+
+                    Throwable 
+                       |
+        ---------------------------------------------------------------
+        Exception                                                   Error 
+            |                                                        |
+            |->represents the issues occured at run-time             |-> represents internal system errors (Memory errors, virtual machine error)
+            |                                                        |-> LinkageError
+            |
+    ---------------------------------------------------------------------------
+    RuntimeException                IOExeption          SQLException        EmployeeNotFoundException
+      |
+    ArithmaticException
+    InputMismatchException
+    ArrayIndexOutofBoundExpception 
+    NullPointerException 
+    IllegalStateException 
+
+
+    ** Default exception handler 
+        - If run-time system searches all the methods on call stack and couldn’t have find the appropriate handler 
+            then run-time system handover the Exception Object to default exception handler, which is part of run-time system.
+            This default handler prints exception class name, exception description and stacktrace and terminates program abnormally.
+
+
+    Unchecked Expcetions 
+        - not necessarily handled by try-catch block 
+        - if there is no handler found, these exception are handled by the "default exception handler"
+        - all the "RunTimeExceptions" are unchecked 
+
+    Checked Expceptions 
+        - must be handled by writing try-catch block or they can be declared to be thrown
+
+
+        Below concepts are used to handle the exception 
+        --------------------------------------------------
+            - try-catch block
+            - 'throws' keyword 
+            - 'throw' keyword 
+            - 'finally' keyword 
+            - try with resources block (introduced in java7)
+                - you can use try with resource block only for 'Closable' resources 
+            - creating custom exception classes 
+
+
+
+                try {
+                    //make a connection to the db 
+
+                    //perform some db related oprations here..
+                    //the code to be monitored 
+
+                   
+
+                }catch(XYZException ex){
+
+                }catch(PQRException ex){
+
+                }finally{
+                     //once the operations are done, close the connection
+                     //release the resources 
+                }
+
+
+
+                try(open the connection to db / file / etc){
+
+                }catch(Exception ex){
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1183,12 +1321,4 @@ Garbadge Collection
 
 
    
-
-   class Member {
-
-
-        public static Member findMember(ArrayList<Member> list, int id){
-
-        }
-
-   }
+ 

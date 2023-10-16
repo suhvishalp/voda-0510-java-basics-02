@@ -1275,23 +1275,82 @@ Garbadge Collection
 
 
 
+    Multi Threading 
+    ----------------
+        - every java program runs inside a thread, i.e. Main Thread 
+
+        There are three ways to create a thread 
+
+        1. using the Thread class 
+            a.  create a custom class that extends the Thread class 
+
+                    class MyThread extends Thread {
+
+                    }
+
+            b. override the 'run()' method to define the task you want to execute in the thread 
+
+                    class MyThread extends Thread {
+
+                        public void run(){
+                            //code to be executed inside a thread.
+                        }
+                    }     
+            c. start the thread 
+                 calling the 'start()' method on the thread object       
+
+        2. using the Runnable interface 
+
+            a. create a class that implements Runnable interface & override the 'run()' method to define the task you want to execute in the thread 
+                - this class just represents the code that is supposed to be executed inside a thread 
+
+                    class MyTask implements Runnable {
+                        public void run(){
+                            //code to be executed inside a thread.
+                        }
+                    }
+
+            b. Create a Thread Object, initialize the runnable task and start the tread 
+                    MyTask task1 = new MyTask();
+                    Thread t1 = new Thread(task1);
 
 
 
 
 
+        How to pause a thrad 
+            - Thread.sleep() method 
+
+        How to interrupt a thread 
+            - Thread.interupt(); 
+
+        how to make a thread wait for another thread 
+            - .join() method 
 
 
+        Thread synchronization 
+        --------------------------
+            - implement synchronization
+                = 1. using the ReentrantLock object (old technique)
+                = 2. making the methods synchronized
 
 
+        Thread DeadLock 
+        ----------
+
+            class A {
+
+                synchronized void methodA() {
+                    B.methoB()
+                }
+            }
 
 
-
-
-
-
-
-
+            class B {
+               synchronized void methodB() {
+                    A.methodA();
+                } 
+            }
 
 
 

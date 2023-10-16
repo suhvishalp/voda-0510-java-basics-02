@@ -1352,8 +1352,63 @@ Garbadge Collection
                 } 
             }
 
+        3. Creating threads and executing multiple tasks using "Concurrent API" 
+
+                   1. java.util.concurrent package 
+                        **- provides the utility classes commonly useful in concurrent programming 
+                            i.e. Executors 
+
+                   2. java.util.concurrent.locks package 
+                        - provides Lock and Condition implementations 
+
+                   3. java.util.concurrent.atomic package  
+                        - provides some data types i.e. AtomicInteger 
 
 
+
+            java.util.concurrent
+            ---------------------------
+                    - provides utility classes that are used to create "thread pools" 
+                    - instead of creating a new thread whenever a task arrives / every time, 
+                            you can use a thread pool which keeps a number of reusable threads ready for executing the task 
+                    - the "Executors" provides various methods to create a pool of threads 
+
+                    1. Executor 
+
+                    2. ExecutorService 
+
+                    3. ScheduledExecutorService 
+
+
+
+                methods to create thread pools 
+                -------------------------------
+                    1. newSingleThreadExecutor()
+                    2. newFixedThreadPool(0)
+
+
+
+            <T> Future<T>	submit(Callable<T> task)
+                - Submits a value-returning task for execution and returns a Future representing the pending results of the task
+
+
+        Future interface: 
+        -------------------
+            - it is an interface, 
+            - A Future represents the result of an asynchronous computation 
+
+                    interface Future<V>{
+                        V	get()
+                            // Waits if necessary for the computation to complete, and then retrieves its result.
+                        V	get(long timeout, TimeUnit unit)
+                            //Waits if necessary for at most the given time for the computation to complete, and then retrieves its result, if available.
+                    }
+
+        Callable interface 
+        ------------------
+            - public interface Callable<V>
+                    - A task that returns a result and may throw an exception
+                    - override the V call() method 
 
 
 

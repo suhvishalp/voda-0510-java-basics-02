@@ -14,7 +14,7 @@ public class MyThread extends Thread{
 		for(int j=1; j<=10; j++) {
 			System.out.println("\n\t" + Thread.currentThread().getName() + " : j = " + j);
 			try {
-				Thread.sleep(3000);
+				Thread.sleep(10000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

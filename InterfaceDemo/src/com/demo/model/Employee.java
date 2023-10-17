@@ -4,7 +4,18 @@ public class Employee {
 
 	private int empId;
 	private String name;
+	private String city;
 	private double salary;
+
+	
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
 	
 	public Employee() {
 		super();
@@ -14,6 +25,16 @@ public class Employee {
 		super();
 		this.empId = empId;
 		this.name = name;
+		this.salary = salary;
+	}
+	
+	
+
+	public Employee(int empId, String name, String city, double salary) {
+		super();
+		this.empId = empId;
+		this.name = name;
+		this.city = city;
 		this.salary = salary;
 	}
 

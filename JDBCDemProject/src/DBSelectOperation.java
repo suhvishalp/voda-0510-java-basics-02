@@ -38,7 +38,7 @@ public class DBSelectOperation {
 				String eName = resultSet.getString("empName");
 				String city = resultSet.getString("city");
 				int salary = resultSet.getInt("salary");
-				
+								
 				System.out.println(id + "\t" + eName + "\t" + city + "\t" + salary);
 			}
 			

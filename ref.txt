@@ -1410,6 +1410,146 @@ Garbadge Collection
                     - A task that returns a result and may throw an exception
                     - override the V call() method 
 
+        //class B represents a Callable task - a task that can be executed inside a thread, and it may return a value or throw exception
+        class B implements Callable<V> {
+                //override 
+                public V call(){
+                    //perfom some async task 
+                    //calculate some values
+                    return a value V;
+                }
+        }
+
+        B taskB = new B();
+
+
+
+        //class A represents a runnable task - a task that can be executed inside a thread 
+        class A implements Runnable {
+                //override 
+                public void run(){
+
+                }
+        }
+
+        ExecutorService poolService = Executors.newSingleThreadExecutor();
+        poolService.execute(Runnable target)
+        poolService.submit(Callable target)
+
+        Future<V> futValue =  poolService.submit(taskB);          //internaly this method uses a thread from the pool, and executes the taskB
+        V value  = futValue.get(5, TimeUnit.SECONDS);
+        V value  = futValue.get();
+
+
+
+
+
+
+                        Executor<T> interface 
+                            |
+                            |-> void execute(Runnable target)
+                            |
+                        ExecutorService<T> interface 
+                            |
+                            |-> void execute(Runnable target)
+                            |-> Future<V> submit(Callable target)
+                            |-> shutdown()
+                            |-> isDone()
+                            |
+                        SchelduledExecutorService<T> interface 
+                            |
+                            |-> ScheduledFuture<?>	schedule(Runnable command, long delay, TimeUnit unit)
+                            |-> ScheduledFuture<?>	scheduleAtFixedRate(Runnable command, long initialDelay, long period, TimeUnit unit)
+                            |-> ScheduledFuture<V>	schedule(Callable<V> callable, long delay, TimeUnit unit)
+
+
+        JDBC 
+        ------------
+            - java database connectivity 
+            - jdbc is just a specification or standard that every db vendor has to implement 
+            - every DB Vendor generally provides "driver" to communicate with the database 
+            - to use the MySQL Database you have to first download the 'mysql-sql-driver'
+
+
+            - Driver class 
+                - responsible to communiate with the respective database 
+
+
+            db                          Driver class name                   url 
+            mysql                       com.mysql.cj.jdbc.Driver            jdbc:mysql://localhost:3306/mydb
+            oracle                          
+            ms sql server 
+            h2 
+            ..
+            ..
+
+
+            DriverManager class 
+                - used to create the "Connection" with the database 
+
+            Connection object 
+                - Connection object represents the connection to the db and used to send sql commands to the databse 
+
+            Statement Object 
+                - using the Connection object, we can create 'Statement' objects 
+                - using the 'statement' object we can submit the sql commands / sql queries to the db 
+
+                    1. Statement 
+                            connection.createStatement()
+
+                    2. PreparedStatement 
+                            connection.prepareStatement()
+
+                    3. Callable Statement 
+                            connection.callStatement();
+
+
+
+        Steps to connect / communicate with the database 
+
+            1. load the db drivers 
+
+                        Class.forName("com.mysql.cj.jdbc.Driver");
+
+            2. create Connection with the db 
+
+                      Connection connection =  DriverManager.getConnection("urlOfTheDb","username","password");
+
+            3. create the Statement object 
+
+                          Statement statement =  connection.createStatement();
+
+            4. execute the sql commands / submit the sql queries to the db 
+
+                            int executeUpdate(String query)
+                                - submits the sql statement to the db, and returns an int value that represents the number of rows affected 
+                                - used to INSERT, UPDATE and DELETE 
+
+                            statement.executeResult()
+
+                            statement.execute();
+
+            5. close the connection 
+
+                    connection.close();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

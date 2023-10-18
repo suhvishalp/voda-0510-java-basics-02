@@ -8,7 +8,6 @@
     <fullyQualifiedTypeName name="java.lang.StringIndexOutOfBoundsException"/>
     <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
     <fullyQualifiedTypeName name="com.demo.repositories.EmployeeRepositoryImpl"/>
-    <fullyQualifiedTypeName name="com.demo.repositories.EmployeeRepository"/>
     <fullyQualifiedTypeName name="com.demo.model.Employee"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
@@ -45,4 +44,13 @@
     <fullyQualifiedTypeName name="MyTask"/>
     <fullyQualifiedTypeName name="java.lang.Runnable"/>
     <fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="javax.sql.DataSource"/>
+    <fullyQualifiedTypeName name="org.apache.commons.dbcp2.BasicDataSource"/>
+    <fullyQualifiedTypeName name="com.demo.config.DBUtil"/>
+    <fullyQualifiedTypeName name="com.demo.repositories.EmployeeRepository"/>
+    <fullyQualifiedTypeName name="com.demo.repositories.EmployeeRepositoryJDBCImpl"/>
 </qualifiedTypeNameHistroy>

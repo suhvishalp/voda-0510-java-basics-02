@@ -1496,9 +1496,14 @@ Garbadge Collection
 
                     1. Statement 
                             connection.createStatement()
+                            - using statement object we can execute any sql statement, but it requires lot of concatenation for dynamic values 
+                            - we cannot store binary values using object 
+                            - the sql query is compiled every time we execute the statement
 
                     2. PreparedStatement 
                             connection.prepareStatement()
+                            - it represents a pre-compiled query, and can also have paramterised queries 
+                            - 
 
                     3. Callable Statement 
                             connection.callStatement();
@@ -1525,7 +1530,14 @@ Garbadge Collection
                                 - submits the sql statement to the db, and returns an int value that represents the number of rows affected 
                                 - used to INSERT, UPDATE and DELETE 
 
-                            statement.executeResult()
+                            ResultSet executeQuery(String sql)
+                                - submits the sql statement to the db, and returns an object of "ResultSet"
+                                - ResultSet object represents table of data fetched from the db 
+                                    - it has a cursor, which by default points to the row before first row 
+                                    - the .next() advances the cursor to the next row, returns true if the next row is available 
+                                    - using the getXXXX() methods we can read the data from each row 
+
+                                    rs.getInt(1)            rs.getInt("empId")
 
                             statement.execute();
 
@@ -1535,29 +1547,108 @@ Garbadge Collection
 
 
 
+        
+         --->   '101','Vishal','Pune','2000'
+            '102','Vaibhav','Pune','3000'
+            '103','Om','Mumbai','1200'
+            '104','Rohit','Hyderabad','8000'
+            '105','Mohit','BLR','3500'
+
+
+    Java 8 Features 
+    -------------------
+        - Functional interfaces 
+        - Lambda expressions 
+        - pre-defined / inbulit functional interfaces 
+            - Predicate 
+            - Supplier 
+            - Consumer 
+            - Function 
+        - Stream API 
 
 
 
 
+    Functional interfaces 
+    ------------------------
+        - the interface which has only 1 abstract method is called Fuctional Interface 
+
+            @FunctionalInterface
+            interface Taxable {
+                public double calcTax(double intRate);
+            }
+
+            interface Runnable{
+                public void run();
+            }
+
+            interface Callable<V>{
+                public V call();
+            }
+
+            interface Comparable<T>{
+                public int compareTo(T t)
+            }
+
+            interface Comparator<T>{
+                public int compare(T t1, T t2);
+            }
 
 
+    Ways to implement the Functional interfaces 
+    ---------------------------------------------
+        A. by creating a class that implements the interface 
+
+                class Product implements Taxable{
+                    //override the abstract method of the taxable interface 
+
+                    public double calcTax(double intRate){
+                        //logic 
+                        //code
+                    }
+                }
+
+                class EmplSalComparator implements Comparator<Employee>{
+                    public int compare(Employee e1, Employee e2){
+                        //logic 
+                    }
+                }
+
+                class MyTask implements Runnable {
+                    public void run(){
+                        //code 
+                    }
+                }
+        B. by creating an annonymous object / instance 
+
+                Runnable task1 = new Runnable(){
+                        public void run(){
+                            //code 
+                        }
+                };
 
 
+        C. using Lambda Expression 
+
+            Runnable task1 = () -> //code 
+                        
+     Lambda expressions  
+     -------------------
+            - offers a simplified way to implement a functional interface 
 
 
+     - pre-defined / inbulit functional interfaces 
 
+            - Predicate 
+                - a functional interface that represents a predicate (boolean-valued function) of one argument.
 
+                Interface Predicate<T>{
+                    boolean	test(T t);
+                }
 
-
-
-
-
-
-
-
-
-
-
+            - Supplier 
+            - Consumer 
+            - Function 
 
 
 

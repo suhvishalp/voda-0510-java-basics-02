@@ -1647,14 +1647,63 @@ Garbadge Collection
                 }
 
             - Supplier 
-            - Consumer 
+
+                - Interface Supplier<T>{
+                    T get() 
+                }
+
+            - Consumer
+
+                    interface Consumer<T>{
+                        void	accept(T t)
+                    } 
+
             - Function 
+                Interface Function<T,R>{
+                    R	apply(T t)
+                }
+
+    Stream API 
+    ------------------
+        - a stream represents a sequence of elements and supports sequential as well as parallel aggregate operations 
+        - process the collections, array and any I/O channel  
+
+        - Every collection class has the stream() method that returns a 'Stream' of elements 
+
+            List<String> list = new ArrayList();
+
+            list.stream();
+            Stream.of(list);
+
+    Stream Operations 
+    ---------------------
+        - intermediate operations 
+            - filter(predicate) 
+                - returns a new stream that consist elements matching a given condition 
+
+            - map(function) 
+                - returns a new stream consisting elements which are the result of the given function
+                - mapToInt()
+                - mapToLong() 
+                - mapToDouble()
+
+            - sorted() 
+            - limit() 
+            - distinct() 
+
+           
 
 
-
-
-
-
+        - terminal operations 
+            - collect() 
+            - reduce() 
+            - forEach() 
+            - allMatch()
+            - anyMatch()
+            - nonMatch()
+            - count() 
+            - min(comparator) 
+            - max(comparator)
 
 
 

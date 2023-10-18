@@ -1,3 +1,4 @@
+import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 
 public class PredicateDemo {
@@ -8,9 +9,10 @@ public class PredicateDemo {
 		int[] numsArr = {23,54,3,6,45,2,31,7,9,35, 75, 5,2,54,56,34,2,11,33};
 		
 		
-		Predicate<Integer> evenNumPredicate = (t) -> t % 2 == 0;
-		Predicate<Integer> oddNumPredicate = (t) -> t % 2 == 1;	
-		Predicate<Integer> numPredicate1 = (t) -> t > 30;	
+		Predicate<Integer> evenNumPredicate =  n -> n % 2 == 0;
+		Predicate<Integer> oddNumPredicate =  n -> n % 2 == 1;	
+		Predicate<Integer> numPredicate1 = n -> n > 30;	
+		
 		
 		Predicate<Integer> combinedPredicate = evenNumPredicate.and(numPredicate1);
 			

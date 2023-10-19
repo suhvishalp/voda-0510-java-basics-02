@@ -10342,3 +10342,111 @@ java.lang.IllegalArgumentException: release 17 is not found in the system
 	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:161)
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:255)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.debug.core 4 2 2023-10-19 16:27:41.514
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.core".
+!STACK 0
+java.lang.NoClassDefFoundError: org/eclipse/php/internal/debug/ui/PHPDebugUIPlugin$FirstSelectionDebugLaunchListener$1
+	at org.eclipse.php.internal.debug.ui.PHPDebugUIPlugin$FirstSelectionDebugLaunchListener.launchesAdded(PHPDebugUIPlugin.java:476)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchesNotifier.run(LaunchManager.java:273)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchesNotifier.notify(LaunchManager.java:262)
+	at org.eclipse.debug.internal.core.LaunchManager.fireUpdate(LaunchManager.java:1057)
+	at org.eclipse.debug.internal.core.LaunchManager.addLaunch(LaunchManager.java:694)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:764)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:717)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.ClassNotFoundException: An error occurred while automatically activating bundle org.eclipse.php.debug.ui (986).
+	... 11 more
+
+!ENTRY org.eclipse.debug.core 4 120 2023-10-19 16:27:41.517
+!MESSAGE An exception occurred during launch change notification.
+!STACK 0
+java.lang.NoClassDefFoundError: org/eclipse/php/internal/debug/ui/PHPDebugUIPlugin$FirstSelectionDebugLaunchListener$1
+	at org.eclipse.php.internal.debug.ui.PHPDebugUIPlugin$FirstSelectionDebugLaunchListener.launchesAdded(PHPDebugUIPlugin.java:476)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchesNotifier.run(LaunchManager.java:273)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchesNotifier.notify(LaunchManager.java:262)
+	at org.eclipse.debug.internal.core.LaunchManager.fireUpdate(LaunchManager.java:1057)
+	at org.eclipse.debug.internal.core.LaunchManager.addLaunch(LaunchManager.java:694)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:764)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:717)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.ClassNotFoundException: An error occurred while automatically activating bundle org.eclipse.php.debug.ui (986).
+	... 11 more
+
+!ENTRY org.eclipse.debug.core 4 2 2023-10-19 16:28:22.229
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.core".
+!STACK 0
+java.lang.NoClassDefFoundError: org/eclipse/php/internal/debug/ui/PHPDebugUIPlugin$FirstSelectionDebugLaunchListener$1
+	at org.eclipse.php.internal.debug.ui.PHPDebugUIPlugin$FirstSelectionDebugLaunchListener.launchesAdded(PHPDebugUIPlugin.java:476)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchesNotifier.run(LaunchManager.java:273)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchesNotifier.notify(LaunchManager.java:262)
+	at org.eclipse.debug.internal.core.LaunchManager.fireUpdate(LaunchManager.java:1057)
+	at org.eclipse.debug.internal.core.LaunchManager.addLaunch(LaunchManager.java:694)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:764)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:717)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.ClassNotFoundException: An error occurred while automatically activating bundle org.eclipse.php.debug.ui (986).
+	... 11 more
+
+!ENTRY org.eclipse.debug.core 4 120 2023-10-19 16:28:22.230
+!MESSAGE An exception occurred during launch change notification.
+!STACK 0
+java.lang.NoClassDefFoundError: org/eclipse/php/internal/debug/ui/PHPDebugUIPlugin$FirstSelectionDebugLaunchListener$1
+	at org.eclipse.php.internal.debug.ui.PHPDebugUIPlugin$FirstSelectionDebugLaunchListener.launchesAdded(PHPDebugUIPlugin.java:476)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchesNotifier.run(LaunchManager.java:273)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchesNotifier.notify(LaunchManager.java:262)
+	at org.eclipse.debug.internal.core.LaunchManager.fireUpdate(LaunchManager.java:1057)
+	at org.eclipse.debug.internal.core.LaunchManager.addLaunch(LaunchManager.java:694)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:764)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:717)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.ClassNotFoundException: An error occurred while automatically activating bundle org.eclipse.php.debug.ui (986).
+	... 11 more
+
+!ENTRY org.eclipse.debug.core 4 2 2023-10-19 16:29:48.583
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.core".
+!STACK 0
+java.lang.NoClassDefFoundError: org/eclipse/php/internal/debug/ui/PHPDebugUIPlugin$FirstSelectionDebugLaunchListener$1
+	at org.eclipse.php.internal.debug.ui.PHPDebugUIPlugin$FirstSelectionDebugLaunchListener.launchesAdded(PHPDebugUIPlugin.java:476)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchesNotifier.run(LaunchManager.java:273)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchesNotifier.notify(LaunchManager.java:262)
+	at org.eclipse.debug.internal.core.LaunchManager.fireUpdate(LaunchManager.java:1057)
+	at org.eclipse.debug.internal.core.LaunchManager.addLaunch(LaunchManager.java:694)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:764)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:717)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.ClassNotFoundException: An error occurred while automatically activating bundle org.eclipse.php.debug.ui (986).
+	... 11 more
+
+!ENTRY org.eclipse.debug.core 4 120 2023-10-19 16:29:48.587
+!MESSAGE An exception occurred during launch change notification.
+!STACK 0
+java.lang.NoClassDefFoundError: org/eclipse/php/internal/debug/ui/PHPDebugUIPlugin$FirstSelectionDebugLaunchListener$1
+	at org.eclipse.php.internal.debug.ui.PHPDebugUIPlugin$FirstSelectionDebugLaunchListener.launchesAdded(PHPDebugUIPlugin.java:476)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchesNotifier.run(LaunchManager.java:273)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchesNotifier.notify(LaunchManager.java:262)
+	at org.eclipse.debug.internal.core.LaunchManager.fireUpdate(LaunchManager.java:1057)
+	at org.eclipse.debug.internal.core.LaunchManager.addLaunch(LaunchManager.java:694)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:764)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:717)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.ClassNotFoundException: An error occurred while automatically activating bundle org.eclipse.php.debug.ui (986).
+	... 11 more

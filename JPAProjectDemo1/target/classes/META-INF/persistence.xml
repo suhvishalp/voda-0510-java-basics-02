@@ -5,6 +5,8 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		
 		<class>com.demo.entities.Employee</class>
+				<class>com.demo.entities.Person</class>
+		
 		
 		 <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />

@@ -1824,7 +1824,15 @@ Garbadge Collection
 
 
 
+    JPA 
 
+
+    JPA Provider 
+
+
+    Spring Data JPA 
+        - is a module/sub-project in spring framework that offers 'Respository' pattern wrapping up 
+            the JPA provider 
 
 
 

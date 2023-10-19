@@ -1707,6 +1707,150 @@ Garbadge Collection
 
 
 
+    JDBC challenges 
+    -----------
+        - heavily dependent on sql queries, you have to write complex queries 
+        - if you make any changes to the model / bo classes, then you have to make lot of changes in the code as well as in the db tables 
+        - using jdbc as a low level api, there may be lot of code duplications 
+
+
+    ORM - object relational mapping frameworks 
+    -------------------------------------------
+        - orm tools allow s to map the java objects with the relational tables 
+        - Object-Relational Mapping or ORM is a technique for converting data between Java objects and relational databases
+
+        - Hibernate 
+        - iBatis 
+        - TopLink 
+
+
+    JPA - Java Persistence API 
+    ----------------------------
+        - it is just a specification / standard 
+        - every ORM tool must implement this standard 
+        - JPA is vendor independent "specification" for mapping java objects with relational tables 
+
+
+     JPA Vendors / JPA Providers 
+     -------------------------------
+        - Hibernate JPA 
+        - MyBatis 
+        - EclipseLink
+        - OpenJPA
+        - ..
+
+
+    Entity
+    -----------
+        - entities in jpa are POJO classes 
+        - an entity is an object which is persisted / managed by the JPA providers 
+
+        @Entity
+        public class Employee{
+
+            @Id
+            private int empId;
+
+
+            public Employee(){
+
+            }
+        } 
+
+
+    EntityManager 
+    ----------------
+        - EntityManager is an object which is used to manage the entities 
+        - EntityManager is responsible to persists the entities in to the database 
+
+
+    PersistenceContext 
+    ----------------------
+        - it is a configuration for one or more persistence units 
+        - A persistence unit defines configuration for mapping the java classes with the database 
+        - the configuration is described in a xml file called "persistence.xml" 
+
+        - persistence.xml 
+        ----------------------
+            <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.1" xsi:schemalocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+                <persistence-unit name="my-persistence-unit">
+                    <classes>
+                        //define which java classes you wish to be mapped with the database 
+                    </classes>
+                    <provider>
+                        //provier class name
+                    </provider>
+                    <properties>
+                        //in which db you want to persist the data 
+                        //db url 
+                        //db username 
+                        //db password
+                    </properties>
+                </persistence-unit>
+            </persistence>
+
+
+    JPQL 
+    -------
+        - is object oriented way to commnicate with the database 
+
+
+
+
+        Project 
+        ---------------
+            - Entity classes 
+                
+                @Entity
+                public class Employee{
+
+                    @Id
+                    private int empId;
+
+
+                    public Employee(){
+
+                    }
+                } 
+
+            - create an object of EntityManager 
+
+              EntityManager entityManager =  EntityManagerFactory.createEntityManager("my-persistence-unit")
+
+                Employee emp = new Employee(-,-,-,-,);
+                entityManager.save(emp);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     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
 

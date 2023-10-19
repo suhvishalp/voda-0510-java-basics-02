@@ -29,6 +29,8 @@ public class StreamAPIDemo2 {
 
 		listPersons.add(new Person("Jane", "Smith", "jane@gmail.com", Gender.FEMALE, 24));
 		
+		listPersons.stream();
+		
 		List<String> emailList = listPersons.stream()
 								.filter(person -> person.getGender().equals(Gender.MALE))
 								.map(person -> person.getEmail())

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"  value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost/springdb" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+		<property name="minIdle" value="2" />
+		<property name="maxActive" value="5" />
+	</bean>
+	
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="customerDao" class="com.way2learnonline.dao.CustomerDaoImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+	
+	<bean id="cachingAdvice" class="com.way2learnonline.aspects.CachingAdvice" />
+	
+	 <bean id="mypointcut" class="org.springframework.aop.aspectj.AspectJExpressionPointcut">
+		<property name="expression" value="execution(* *.getCustomerById(..))" />	
+	</bean>
+	
+		<bean id="cachingAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="advice" ref="cachingAdvice"/>
+		<property name="pointcut" ref="mypointcut" />
+	</bean>
+	
+	
+	<bean  id="customerDaoProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="customerDao" />
+		<property name="interceptorNames">
+			<list>
+				<value>cachingAdvice</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	
+	
+<!-- 	
+
+
+
+	
+	
+
+	
+	
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/> -->
+	
+<!-- 	  -->
+	
+	<!-- 
+	
+
+	
+	
+	 -->
+	
+	
+
+</beans>

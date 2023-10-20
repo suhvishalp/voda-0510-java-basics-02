@@ -1,0 +1,19 @@
+package com.way2learnonline;
+
+import org.springframework.beans.factory.config.AbstractFactoryBean;
+
+public class MyJndiObjectFactoryBean extends AbstractFactoryBean<Object>{
+
+	@Override
+	protected Object createInstance() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Class<?> getObjectType() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

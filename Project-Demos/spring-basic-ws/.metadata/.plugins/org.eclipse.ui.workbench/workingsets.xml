@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1438824117070_0" label="01without-spring" name="01without-spring">
+<item elementID="=01bankapp-without-spring" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/way2learnonline-parent" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1438991748133_3" label="02xml-di" name="02xml-di">
+<item elementID="=07-spel-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=03cp-namespace-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=04-externalising-properties-start" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=06-factorybean-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=04-externalising-properties-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=01xml-di-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=01xml-di-start" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=02xml-di-multipleconfigfiles-start" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=03cp-namespace-start" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=02xml-di-multipleconfigfiles-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=05-bean-inheritance-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1438995441749_4" label="03annotation-di" name="03annotation-di">
+<item elementID="=02annotation-di-withoutcomponentscan-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=03javaconfig-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=02annotation-di-withoutcomponentscan-start" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=01annotation-di-usingcomponentscan-start" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=03javaconfig-start" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=01annotation-di-usingcomponentscan-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1438999706230_5" label="04testing-and-profiles" name="04testing-and-profiles">
+<item elementID="=01-integration-tests-start" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=01-integration-tests-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=02profiles-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=02profiles-start" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1439011131986_6" label="06spring-jdbc" name="06spring-jdbc">
+<item elementID="=01-spring-jdbc-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=01-spring-jdbc-start" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1439012116402_7" label="07aop" name="07aop">
+<item elementID="=01-caching-without-aop-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=06-aop-using-boot" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=02-caching-using-customproxy-start" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=02-caching-using-customproxy-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=03-caching-usingaop-arounradvice-withoutannotations-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=05-aop-using-xml-start" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=05-aop-using-xml" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=03-caching-usingaop-arounradvice-withoutannotations-start" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=04-caching-usingaop-arounradvice-withannotations-start" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=04-caching-usingaop-arounradvice-withannotations-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1439022409898_8" label="08transactions" name="08transactions">
+<item elementID="=01-programmatic-tx-start" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=03-xmldriven-tx-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=02-annotationdriven-tx-start" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=01-programmatic-tx-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=03-xmldriven-tx-start" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=02-annotationdriven-tx-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1443930786444_9" label="05springboot" name="05springboot">
+<item elementID="=01springboot-intro-start" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=01springboot-intro-solution" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1438991584801_1" label="Window Working Set" name="Aggregate for window 1438991584801"/>
+<mruList name="02xml-di"/>
+<mruList name="01without-spring"/>
+</workingSetManager>

@@ -1795,6 +1795,12 @@ Garbadge Collection
         - is object oriented way to commnicate with the database 
 
 
+        sql command 
+            "SELECT * FROM employee WHERE sal > 3000"
+
+        jpql command 
+            SELECT e.empId, e.name, e.salary FROM Employee e; 
+
 
 
         Project 
@@ -1820,10 +1826,6 @@ Garbadge Collection
                 Employee emp = new Employee(-,-,-,-,);
                 entityManager.save(emp);
 
-
-
-
-
     JPA 
 
 
@@ -1833,6 +1835,121 @@ Garbadge Collection
     Spring Data JPA 
         - is a module/sub-project in spring framework that offers 'Respository' pattern wrapping up 
             the JPA provider 
+
+    Reflection API 
+    -----------------
+
+
+
+    Design Patterns 
+
+        - Singleton 
+        - factory 
+        - builder 
+
+
+Types of applications 
+-------------------------
+
+    - web applications **
+    - REST API applications **
+    - mobile applications 
+    - event driven applications 
+    - batch applications 
+    - console applications 
+    - game applications 
+    - service worker applications 
+    - Serverless applications 
+    - cloud native applications
+    - microservice based applications  **
+
+
+    overview and features of Java version 9 to 17 
+    -----------------------------------------------
+
+
+
+    Spring Framework 
+    -----------------------
+        - helps to build software applications 
+        - The Spring Framework provides a comprehensive programming and configuration model for modern Java-based enterprise applications - on any kind of deployment platform.
+        - Spring makes it easy to create Java enterprise applications
+
+            - build 
+            - deploy 
+            - manage the dependencies
+            - monitor 
+            - debug / troubleshooting  
+            - implement security 
+            - better project structure 
+
+            Features of Spring Framework 
+                Core technologies: dependency injection, events, resources, i18n, validation, data binding, type conversion, SpEL, AOP.
+                Testing: mock objects, TestContext framework, Spring MVC Test, WebTestClient.
+                Data Access: transactions, DAO support, JDBC, ORM, Marshalling XML.
+                Spring MVC and Spring WebFlux web frameworks.
+                Integration: remoting, JMS, JCA, JMX, email, tasks, scheduling, cache and observability.
+
+   Modules / Projects in Spring Framework
+
+       1. Spring Core 
+
+       2. Spring AOP 
+
+       2. Spring Web  
+            - Spring MVC 
+            - Spring REST 
+
+       3. Spring Data 
+            - Spring Data JPA 
+            - Spring Data MongoDB 
+            - 
+
+       4. Spring Cloud 
+            - Spring Cloud config 
+            - Spring Cloud Gateway 
+            - Spring Cloud Eureka 
+            - Spring Cloud Circuit Breaker 
+
+       5. Spring Security 
+
+       6. Spring Boot 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

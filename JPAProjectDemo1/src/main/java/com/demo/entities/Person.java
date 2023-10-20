@@ -10,18 +10,18 @@ import javax.persistence.InheritanceType;
 public class Person {
 
 	@Id
-	private int personId;
+	private Long personId;
 	private String fistName;
 	
 	public Person() {
 		super();
 	}
 
-	public int getPersonId() {
+	public Long getPersonId() {
 		return personId;
 	}
 
-	public void setPersonId(int personId) {
+	public void setPersonId(Long personId) {
 		this.personId = personId;
 	}
 

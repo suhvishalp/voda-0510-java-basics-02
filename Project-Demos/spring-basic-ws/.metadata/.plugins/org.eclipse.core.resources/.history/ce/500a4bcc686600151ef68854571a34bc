@@ -1,0 +1,6 @@
+sp
+
+db.url=jdbc:mysql://localhost/springdb
+db.driverClassname=com.mysql.jdbc.Driver
+db.username=root
+db.password=root

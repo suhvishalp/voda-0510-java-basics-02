@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.way2learnonline.service.tests&apos; to &apos;01xml-di-start/src/test/java&apos;&#x0D;&#x0A;- Original project: &apos;01bankapp-without-spring&apos;&#x0D;&#x0A;- Destination element: &apos;01xml-di-start/src/test/java&apos;&#x0D;&#x0A;- Original element: &apos;01bankapp-without-spring/src/test/java/com.way2learnonline.service.tests&apos;" description="Copy package" destination="=01xml-di-start/src\/test\/java" element1="/src\/test\/java&lt;com.way2learnonline.service.tests" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1439633723401" version="1.0"/>
+</session>

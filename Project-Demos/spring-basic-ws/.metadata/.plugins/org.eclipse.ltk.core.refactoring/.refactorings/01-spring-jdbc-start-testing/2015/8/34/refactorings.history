@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;AccountRepositoryTests.java&apos; to &apos;01-spring-jdbc-solution/src/test/java/com.way2learn.repository.tests&apos;&#x0D;&#x0A;- Original project: &apos;01-spring-jdbc-start-testing&apos;&#x0D;&#x0A;- Destination element: &apos;01-spring-jdbc-solution/src/test/java/com.way2learn.repository.tests&apos;&#x0D;&#x0A;- Original element: &apos;com.way2learn.repository.tests.AccountRepositoryTests.java&apos;" description="Copy compilation unit" destination="=01-spring-jdbc-solution/src\/test\/java&lt;com.way2learn.repository.tests" element1="/src\/test\/java&lt;com.way2learn.repository.tests{AccountRepositoryTests.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1439788302881" units="1" version="1.0"/>
+</session>

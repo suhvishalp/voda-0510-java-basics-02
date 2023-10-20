@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+		
+
+	
+	<bean id="numberGuess" class="com.way2learnonline.model.NumberGuess">
+		<property name="randomNumber" value="#{T(java.lang.Math).random() * 100 }" />
+	</bean>
+	
+	
+	<bean id="shapeGuess" class="com.way2learnonline.model.ShapeGuess" >
+		<property name="initialShapeSeed" value="#{numberGuess.randomNumber}" />
+		<property name="locale"  value="#{systemProperties['user.region']}" />
+	</bean>
+	
+	
+	<bean id="accountRepository" class="com.way2learnonline.repository.JdbcAccountRepositoryImpl">
+		<constructor-arg  value="#{@dataSource}" />
+	</bean>
+	
+	<bean id="transactionRepository" class="com.way2learnonline.repository.JdbcTransactionRepositoryImpl">
+		<constructor-arg value="#{dataSource}"  />
+	</bean>
+
+	<bean id="rewardRepository" class="com.way2learnonline.repository.JdbcRewardRepositoryImpl">
+		<constructor-arg value="#{dataSource}"  />
+	</bean>
+	
+	<bean id="emailService" class="com.way2learnonline.service.EmailServiceImpl" />
+	
+	<bean id="bankService" class="com.way2learnonline.service.BankServiceImpl">
+		<property name="accountRepository" value="#{accountRepository}" />
+		<property name="rewardRepository" value="#{rewardRepository}" />
+		<property name="transactionRepository" value="#{transactionRepository}" />
+		<property name="emailService" value="#{emailService}" />
+	</bean>		
+</beans>

@@ -1,0 +1,35 @@
+package com.way2learnonline;
+
+public class A {
+	
+	private String name;
+	
+	public A() {
+		System.out.println("A.A()");
+	}
+
+	public A(String name) {
+		super();
+		this.name = name;
+		System.out.println("A.A() inside parameterised"+name);
+	}
+	
+	public  String  doSomething(String name){
+		
+		System.out.println(name);
+		
+		return "Hello "+name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+	
+
+}

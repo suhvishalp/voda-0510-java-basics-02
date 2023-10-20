@@ -5,10 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Employee extends Person {
+public class Employee {
 
-	//@Id
-//	@GeneratedValue
+	@Id
+	@GeneratedValue
 	private int empId;
 	
 	private String name;

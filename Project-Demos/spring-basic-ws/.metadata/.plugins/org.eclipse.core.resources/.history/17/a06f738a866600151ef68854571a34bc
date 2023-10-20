@@ -1,0 +1,8 @@
+package com.way2learnonline.config;
+
+import org.springframework.context.annotation.ComponentScan;
+
+@ComponentScan(basePackages={"com.way2learnonline"})
+public class A {
+
+}

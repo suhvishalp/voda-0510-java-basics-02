@@ -1,0 +1,17 @@
+package com.way2learnonline.config;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.ApplicationContext;
+import com.way2learnonline.service.BankService;
+
+
+public class BankApplication {
+	
+	
+	public static void main(String[] args) throws Exception {
+		ApplicationContext context=  SpringApplication.run(InfrastructureConfig.class, args);
+		BankService bankService= context.getBean(BankService.class);
+		bankService.transfer(new Long(1), new Long(2), 1000);
+	}
+
+}

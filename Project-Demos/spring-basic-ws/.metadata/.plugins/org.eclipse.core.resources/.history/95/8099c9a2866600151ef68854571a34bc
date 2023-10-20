@@ -1,0 +1,10 @@
+package com.way2learnonline.config;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+
+@ComponentScan(basePackages={"com.way2learnonline"})
+@Component
+public class A {
+
+}

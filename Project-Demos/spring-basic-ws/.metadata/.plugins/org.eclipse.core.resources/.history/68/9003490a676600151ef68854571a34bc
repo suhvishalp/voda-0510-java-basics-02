@@ -1,0 +1,5 @@
+package com.way2learnonline.config;
+
+public class BankApplication {
+
+}

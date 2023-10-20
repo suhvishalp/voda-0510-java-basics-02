@@ -35,10 +35,10 @@ public class BankServiceTests {
 		 
 		  
 		dataSource= new BasicDataSource();
-		dataSource.setUrl("jdbc:mysql://localhost/springdb");
+		dataSource.setUrl("jdbc:mysql://localhost/mydb");
 		dataSource.setUsername("root");
-		dataSource.setPassword("root");
-		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setPassword("root123123");
+		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		
 		
 		AccountRepository accountRepository= new JdbcAccountRepositoryImpl(dataSource);		

@@ -1894,6 +1894,61 @@ Types of applications
 
        1. Spring Core 
 
+            - IOC - Inversion of control 
+                - tranferring the control / delegating the responsibility of creating the objects to a container or framework 
+                - in Spring, there are container classes who are responsible to create / manage the objects 
+
+
+            - Dependency Injection 
+                - a java application is made up of several objects, one object may be dependent on another object 
+                - 'injecting' means connecting one object to another object 
+
+
+            - Containers 
+                - responsible to manage the objects, i.e. instanstiating the objects, initializaion, destroy the objects 
+                - containers manage the life cycle of objects 
+
+                - in spring we have 3 types of containers 
+
+                    1. BeanFactory 
+                            - this is a super interface that models various type of BeanFactory containers 
+                            - XmlBeanFactory  
+
+                    2. ApplicationContext
+                            - a super interface that models several ApplicationContext containers 
+                            - ClassPathXmlApplicationContext
+                            - FileSystemXmlApplicationContext
+                    
+                    3. WebApplicationContext
+                        - XmlWebApplicationContext
+                        - AnnotationConfigWebApplicationContext
+
+            - Spring Bean 
+                - an object that is managed by the container 
+
+
+            - Bean definitions / Spring Bean Definitions 
+                - a configuration for the spring container using which container creates the objects 
+
+                    a. using xml  
+
+                            application-context.xml 
+                            --------------------------
+                            <beans>
+                                <bean id="employeeDao" class="com.demo.dao.EmployeeDao"> 
+                                
+                                </bean>
+
+                                <bean id="employeeDao" class="com.demo.dao.EmployeeDao" /> 
+                                
+                               
+
+                            </beans>
+
+                    b. using java 
+
+                    c. using java annotations 
+
        2. Spring AOP 
 
        2. Spring Web  

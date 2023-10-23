@@ -13,7 +13,6 @@ import org.springframework.core.io.Resource;
 
 @Configuration
 @PropertySource(value="classpath:db.properties")
-
 public class InfrastructureConfig {
 	
 	@Value("classpath:dbscripts.sql")private Resource dbscript;

@@ -5,12 +5,15 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import com.way2learnonline.model.Account;
 import com.way2learnonline.model.TransactionDetail;
 import com.way2learnonline.model.TransactionType;
-import com.way2learnonline.repository.*;
-
+import com.way2learnonline.repository.AccountRepository;
+import com.way2learnonline.repository.RewardRepository;
+import com.way2learnonline.repository.TransactionRepository;
 
 public class BankServiceImpl implements BankService {
 	

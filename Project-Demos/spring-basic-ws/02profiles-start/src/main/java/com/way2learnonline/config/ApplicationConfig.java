@@ -37,7 +37,6 @@ public class ApplicationConfig {
 	}
 	
 	@Bean
-
 	public StubAccountRepository stubAccountRepository(){
 		return new StubAccountRepository();
 	}

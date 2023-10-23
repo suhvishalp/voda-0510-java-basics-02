@@ -1940,14 +1940,78 @@ Types of applications
                                 </bean>
 
                                 <bean id="employeeDao" class="com.demo.dao.EmployeeDao" /> 
-                                
-                               
-
+                            
                             </beans>
 
                     b. using java 
+                    ---------------
+                            @Configuration
+                            public class ApplicationConfig {
 
-                    c. using java annotations 
+                                @Bean
+                                public Employee createEmployee(){
+                                    //java code to create object of type employee 
+
+                                    return employee;
+                                }
+
+                                @Bean	
+                                public AccountRepository jdbcAccountRepository(){
+                                    
+                                    JdbcAccountRepositoryImpl accountRepositoryImpl= new JdbcAccountRepositoryImpl(dataSource);		
+                                    return accountRepositoryImpl;
+                                }
+	
+                            }
+
+                    c. using java annotations & use the component scan to automatically scan the packages for the classes 
+                        which are marks with below annotations : 
+                            @Component 
+                            @Service 
+                            @Repository 
+                            @Controller 
+
+
+                - Constructor injection 
+
+                - Setter injection 
+
+                - Autowiring 
+                    - Autowiring is a technique used in Spring to enable automatic dependency injection. By using it Spring container can autowire relationships between collaborating beans. It is known as Spring Autowiring.
+
+                - injecting collections (arrays, lists, sets, maps)
+
+                - Scopes 
+                    - scopes define how many instances of the beans should be created, by default scope is 'singleton' 
+
+                    singleton
+                    prototype
+                    request
+                    session
+                    application
+                    websocket
+                    thread 
+
+
+                - bean life cycle methods 
+                -----------------------------
+                1. using xml 
+                        <bean id="" class="" init-method="" destroy-method="" >
+                            <property name="" value="" />
+                            ..
+                            ..
+                        </bean> 
+                        
+                        - 1. constructor 
+                        - 2. setter method if property injection is configured
+                        - 3. post initilization 
+
+                2. implementing InitialzingBean interface and DisposableBean interface 
+
+
+                3. using @PostContruct() @PreDestroy()
+
+
 
        2. Spring AOP 
 

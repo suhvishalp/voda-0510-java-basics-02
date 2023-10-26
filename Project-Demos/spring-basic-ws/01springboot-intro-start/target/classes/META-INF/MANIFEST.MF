@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Built-By: vishalshah
-Build-Jdk: 17.0.6
-Implementation-Title: 04springboot-intro-start
-Implementation-Version: 1.2.5.RELEASE
-Implementation-Vendor-Id: org.springframework.boot
-Implementation-Vendor: Pivotal Software, Inc.
-Created-By: Maven Integration for Eclipse
-

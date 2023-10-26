@@ -4,21 +4,35 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import com.way2learnonline.model.Account;
 import com.way2learnonline.model.TransactionDetail;
 import com.way2learnonline.model.TransactionType;
 import com.way2learnonline.repository.*;
 
-
+//@Component
+@Service
 public class BankServiceImpl implements BankService {
 	
+	@Autowired
 	private AccountRepository accountRepository;
+	
+	@Autowired
 	private TransactionRepository transactionRepository;
+	
+	@Autowired
 	private RewardRepository rewardRepository;	
+	
+	@Autowired
 	private EmailService emailService;
 	
 
-
+	public BankServiceImpl() {
+		
+	}
 
 
 	public Long transfer(Long fromAccountNumber, Long toAccountNumber, int amount) throws SQLException {

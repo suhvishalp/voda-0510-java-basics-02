@@ -16,52 +16,20 @@ import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 
 	
 	@Configuration
-	@PropertySource("classpath:db.properties")	
+	
 	public class InfrastructureConfig {	
 		
 		
-		@Value("classpath:dbscripts.sql")private Resource dbscript;
-		
-		@Autowired
-		private Environment env;
-		
-		@Bean
-		public DataSource dataSource(){		
-			BasicDataSource dataSource= new BasicDataSource();
-			dataSource.setDriverClassName(env.getProperty("db.driverclassname"));
-			dataSource.setUrl(env.getProperty("db.url"));
-			dataSource.setUsername(env.getProperty("db.user"));
-			dataSource.setPassword(env.getProperty("db.password"));
-			return dataSource;		
-		}
 		
 		
-		/*@Bean(name="ds")
-		public DataSource dataSource(){		
-			BasicDataSource dataSource= new BasicDataSource();
-			dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-			dataSource.setUrl("jdbc:mysql://localhost/springdb");
-			dataSource.setUsername("root");
-			dataSource.setPassword("root");
-			return dataSource;		
-		}*/
+		
+		
+		
 		
 	
 	
 		
-		@Bean
-		public DataSourceInitializer dataSourceInitializer(DataSource dataSource){
-			DataSourceInitializer initializer= new DataSourceInitializer();
-			initializer.setDataSource(dataSource);
-			initializer.setDatabasePopulator(databasePopulator());
-			return initializer;
-		}
 		
-		private DatabasePopulator databasePopulator() {
-		     ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
-		    populator.addScript(dbscript);		   
-		    return populator;
-		}
 
 	
 	

@@ -2033,15 +2033,80 @@ Types of applications
        5. Spring Security 
 
        6. Spring Boot 
+            - spring boot provides auto configuration feature that helps in configuration of beans 
+            - based on presense and absense of some dependencies in classpath / based on presence  and absense of some properties 
+                in application.properties file it automatically creates beans as per the requirement 
+
+            - provides starter dependencies
+                - it aggregates commonly used dependencies 
+
+                    - spring-boot-starter-data-jpa 
+                    - spring-boot-starter-web 
+                    - ..
+                    ..
+
+
+
+    DAO Layer 
+    -------------
+        - low level jdbc 
+        - spring jdbc template 
+        - ORM Tools i.e. hibernate, iBatis, toplink 
+        - JPA Providers i.e. Hibernate JPA, MyBatis, EclipseLink, OpenJPA
+        - Spring Dat JPA 
+
+    Spring Data JPA 
+    ------------------
+        - part of Spring Data project 
+        - Spring Data JPA is a wrapper around JPA & the JPA providers 
+        - it offers 'Repository' pattern 
+        - using Spring Data JPA we can seamlessly implement the data access layer 
+        - it supports 'QueryDSL' 
+
+
+
+                interface Repository<T, ID>
+                    |
+                    |->it is a super interface that represents the repo pattern 
+                    |-> Central repository marker interface. Captures the domain type to manage as well as the domain type's id type. General purpose is to hold type information as well as being able to discover interfaces that extend this one during classpath scanning for easy Spring bean creation.
+                    |
+                interface CrudRepository<T, ID>    
+                    |
+                    |-> <S extends T> S save(S entity) ->Saves a given entity
+                    |-> Optional<T> findById(ID id) -> Retrieves an entity by its id.
+                    |-> Iterable<T> findAll() -> Returns all instances of the type.
+                    |-> void deleteById(ID id)  ->Deletes the entity with the given id.
+                    |
+                    |
+                interface JpaRepository<T, ID>   
 
 
 
 
+    **Marker Interface 
+    ======================
+        - Explore this concept 
+
+
+    **Optional object in java 
+    ===========================
+        - Explore this concept 
+
+
+    **Explore - how spring data jpa works internally 
+    ==========================
+
+
+        QueryDSL 
+        ------------
 
 
 
-
-
+        com.demo 
+            SpringDataJPAApplication.java 
+        com.demo.entities 
+        com.demo.services 
+        com.demo.repositories 
 
 
 

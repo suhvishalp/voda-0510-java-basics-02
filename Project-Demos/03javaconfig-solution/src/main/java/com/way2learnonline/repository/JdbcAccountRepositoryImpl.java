@@ -9,15 +9,22 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.way2learnonline.model.*;
 
 
-
+@Component
 public class JdbcAccountRepositoryImpl implements AccountRepository {
 	
+	@Autowired
 	private DataSource dataSource;
 	
 	
+	public JdbcAccountRepositoryImpl() {
+		
+	}
 
 	public JdbcAccountRepositoryImpl(DataSource dataSource) {
 		super();

@@ -2053,7 +2053,7 @@ Types of applications
         - spring jdbc template 
         - ORM Tools i.e. hibernate, iBatis, toplink 
         - JPA Providers i.e. Hibernate JPA, MyBatis, EclipseLink, OpenJPA
-        - Spring Dat JPA 
+        - Spring Data JPA 
 
     Spring Data JPA 
     ------------------
@@ -2078,7 +2078,12 @@ Types of applications
                     |-> void deleteById(ID id)  ->Deletes the entity with the given id.
                     |
                     |
-                interface JpaRepository<T, ID>   
+                Interface PagingAndSortingRepository<T,ID>
+                    |
+                    |-> Iterable<T> findAll(Sort sort) -> Returns all entities sorted by the given options.
+                    |-> Page<T> findAll(Pageable pageable) ->Returns a Page of entities meeting the paging restriction provided in the Pageable object.
+                    |
+                interface JpaRepository<T,ID>
 
 
 
@@ -2110,19 +2115,176 @@ Types of applications
 
 
 
+    Entity Relationships 
+    ---------------------------
+        - in java, the relationship between two entities can be described using 'association' 
+        - in relational dbs, the relation between tables are represented using 'referential integrity' 
+
+            @Entity 
+            public class Order {
+
+                private ShippingAddress shippingAddress;
+            }
+
+            @Entity 
+            public class ShipingAddress{
+
+            }
+
+        *Direction 
+            - Bidirectional 
+            - unidirectional 
+        *Cardinality 
+            - ?
+
+        - @one-to-one 
+
+                Order -----------------------1 ShippingAddress
+
+                Husband 1---------------------1 Wife 
+
+                
+
+        - @one-to-many 
+
+                Student *---------------------1 Class 
+
+                Customer 1-------------------* Order
+
+        - @many-to-one 
+        
+                Class 1 -------------------* Student 
+
+        - @many-to-many 
+
+                Product *--------------*   Customer 
+                p1                          c1
+                p2                          C2
+                p3                          C3
 
 
 
 
 
 
+            1. how to describe the relationship in java 
+                   - using appropriate annottions 
+                        - @OneToOne       
+                        - @OneToMany 
+                        - @ManyToOne 
+                        - @ManyToMany
+
+            2. how the relationships are represented in the relational db
+                    - using join-column - (ref column /  foreign key column )
+                    - using join-table  - (creates a new table to represent the relationships )
+
+            3. how to perform db operations when entities have relationships 
+                    - configure the cascade type and fetch type appropriately 
+
+
+
+
+            @OneToOne               join-column         - eager fetch 
+            @ManyToOne              join-column         - eager fetch 
+
+            @OneToMany              join-table          - lazy 
+            @ManyToMany             join-table          - lazy
+
+
+
+            Cascading 
+            ----------------
+                - when we parent entity (Order) then it's child entities should also be saved first (Address)
+
+                - when we delete the parent entity (car) then it's child may be required to be deleted (engine) 
+
+                - Cascading types 
+
+                    CascadeType.PERSIST     
+                        - save() operations cascase to the related entities 
+                        - if you save parent entity, it's child will be automatically saved 
+
+                    CascadeType.MERGE 
+                        - the related entities are merged when owning entity is merged 
+
+                    CascadeType.REFRESH 
+                        - refresh() operation
+
+                    CascadeType.REMOVE 
+                        - if the parent entity is removed, it's child will be also removed 
+
+                    CascadeType.DETACH 
+                        - detaches all related entities 
+
+                    CascadeType.ALL  
+
+
+            Fetch Policy 
+            --------------
+
+            Eagar Fetch 
+                - by default if the relationship is OneToOne / OneToMany 
+                    - whenever we query an entity, all its related entities are also fetched 
+
+            Lazy Fetch 
+                - if the entities have relationships 
+                    - calling the getter method will trigger the fetch operation on the related entities 
 
 
 
 
 
+            Unidirectional OneToOne 
+            -------------------------
+                    public class Order{                           public class Address {
+                        private int id;                             private int addId;
+                        private String trackingNo;                  private String street, city, state; 
+                        private ..
+
+                        @OneToOne 
+                        private Address shippingAddress;
 
 
+                    }                                              }
+
+            orders_Table                                                     address_table 
+            -------------------------------                                  -----------------
+            id  tn  tp  qty     fk-add_id                                   add-id   street   city  state 
+
+
+
+            1. create the entity classes with relationships 
+            2. observe the table structure in db 
+
+
+
+            Bidirectional OneToOne 
+            -------------------------
+                    public class Order{                           public class Address {
+                        private int id;                             private int addId;
+                        private String trackingNo;                  private String street, city, state; 
+                        private ..
+
+                        @OneToOne                                   @OneToOne
+                        private Address shippingAddress;            private Order order;
+
+
+                    }                                              }
+
+            orders_Table                                                     address_table 
+            -------------------------------                                  -----------------
+            id  tn  tp  qty     fk-add_id                                   add-id   street   city  state   FK_order_id 
+
+
+        **Though you have bidirectional relationship, having the foregin key column in both the tables are required 
+            - we can define an 'owner' of the relationship using 'mapped by' attribute in @OneToOne annotation 
+
+
+
+
+            **Explore Project Lombok 
+            ============================
+                - https://www.baeldung.com/intro-to-project-lombok
 
 
 

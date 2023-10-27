@@ -7,8 +7,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.demo.entities.Address;
 import com.demo.entities.Employee;
+import com.demo.entities.Order;
 import com.demo.entities.Product;
+import com.demo.repositories.AddressRepository;
+import com.demo.repositories.OrderRepository;
 import com.demo.repositories.ProductRepository;
 import com.demo.services.EmployeeService;
 
@@ -22,14 +26,77 @@ class SpringDataJpaDemo2ApplicationTests {
 	
 	@Autowired
 	private ProductRepository productRepo;
+	
+	@Autowired
+	private OrderRepository orderRepo;
+	
+	@Autowired
+	private AddressRepository addRepo;
+	
 
 	@Test
 	void contextLoads() {
 	}
 	
+//	
+//	@Test
+//	@Transactional
+//	public void testGetOrder() {
+//		
+//		Order order = orderRepo.findByOrderTrackingNumber("123456");
+//		//order --> address
+//		
+//		System.out.println("Order Id : " + order.getId());
+//		System.out.println("Order Total :" + order.getTotalPrice());
+//		System.out.println("Address  : " + order.getShippingAddress().getCity());
+//		
+//	}
+//	
 	
-	@Test
-	public void testFindProducts() {
+//	@Test
+//	public void testCreateOrder() {
+//		
+//		//order ---> address
+//		
+//		Order order = new Order();
+//		order.setOrderTrackingNumber("1234567");
+//		order.setTotalQuantity(10);
+//		order.setTotalPrice(new BigDecimal(6000.00));
+//		order.setStatus("IN Progress");
+//	
+//		Address shipAdd = new Address();
+//		shipAdd.setStreet("Mum-BLR highway");
+//		shipAdd.setCity("Mumbai");
+//		shipAdd.setCountry("IN");
+//		shipAdd.setState("MH");
+//		shipAdd.setZipCode("4534534");
+//		
+////		Address shipAdd = addRepo.findById(1L).get();			//managed entity
+//		
+//		order.setShippingAddress(shipAdd);
+// 
+//		orderRepo.save(order);
+//	}
+//	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//	@Test
+//	public void testFindProducts() {
 
 //		productRepo.findAllByPriceGreaterThan(new BigDecimal(1500.00))
 //			.stream()
@@ -43,13 +110,13 @@ class SpringDataJpaDemo2ApplicationTests {
 //			.stream()
 //			.forEach(p -> System.out.println(p));
 		
-		BigDecimal min = new BigDecimal(500.00);
-		BigDecimal max = new BigDecimal(1500.00);
-		productRepo.getProductsByPrice(min, max)
-			.stream()
-			.forEach(p -> System.out.println(p));
-		
-	}
+//		BigDecimal min = new BigDecimal(500.00);
+//		BigDecimal max = new BigDecimal(1500.00);
+//		productRepo.getProductsByPrice(min, max)
+//			.stream()
+//			.forEach(p -> System.out.println(p));
+//		
+//	}
 	
 //	@Test
 //	public void testCreateProduct() {

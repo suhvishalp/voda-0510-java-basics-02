@@ -21,8 +21,7 @@ public class Address {
 	private String country;
 	private String zipCode;
 	
-	@OneToOne(cascade = {CascadeType.DETACH},  mappedBy = "shippingAddress")
-	private Order order;
+	 
 	
 	public Address() {
 		super();
@@ -31,13 +30,7 @@ public class Address {
 	
 	
 
-	public Order getOrder() {
-		return order;
-	}
 
-	public void setOrder(Order order) {
-		this.order = order;
-	}
 
 
 

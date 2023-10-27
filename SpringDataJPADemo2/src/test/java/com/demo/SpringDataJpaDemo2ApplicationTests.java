@@ -1,17 +1,19 @@
 package com.demo;
 
 import java.math.BigDecimal;
-import java.util.Optional;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.demo.entities.Address;
-import com.demo.entities.Employee;
 import com.demo.entities.Order;
+import com.demo.entities.OrderItem;
 import com.demo.entities.Product;
 import com.demo.repositories.AddressRepository;
+import com.demo.repositories.OrderItemRepository;
 import com.demo.repositories.OrderRepository;
 import com.demo.repositories.ProductRepository;
 import com.demo.services.EmployeeService;
@@ -32,6 +34,9 @@ class SpringDataJpaDemo2ApplicationTests {
 	
 	@Autowired
 	private AddressRepository addRepo;
+	
+	@Autowired
+	private OrderItemRepository orderItemRepo;
 	
 
 	@Test
@@ -80,17 +85,51 @@ class SpringDataJpaDemo2ApplicationTests {
 //	
 	
 	
+	@Test
+	public void saveOrder() {
+		Order order = new Order();
+		
+		order.setOrderTrackingNumber("1234567");
+		order.setStatus("IN Progress");
 	
+		Address shipAdd = new Address();
+		shipAdd.setStreet("Mum-BLR highway");
+		shipAdd.setCity("Mumbai");
+		shipAdd.setCountry("IN");
+		shipAdd.setState("MH");
+		shipAdd.setZipCode("4534534");
+		//op3 - inserts a new shipping address to the address table 		
+		order.setShippingAddress(shipAdd);
+		
+		//create orderitems 
+		
+		OrderItem orderItem1 = new OrderItem();
+		Product p1 = productRepo.findBySku("8786574");			//op1 - fetch product by the given id
+		orderItem1.setProduct(p1);
+		orderItem1.setQuantity(2);
+		
+		OrderItem orderItem2 = new OrderItem();
+		Product p2 = productRepo.findBySku("54323333");			//	//op2 - fetch product by the given id
+		orderItem2.setProduct(p2);
+		orderItem2.setQuantity(2);
+		
+		Set<OrderItem> items = new HashSet<>();
+		items.add(orderItem1);
+		items.add(orderItem2);
+		
+		order.setOrderItems(items);
 	
+		
+		//calculate the totalprice & qty based on items in the order x its qty
+		order.setTotalPrice(new BigDecimal(6000.00));
+		order.setTotalQuantity(10);
 	
-	
-	
-	
-	
-	
-	
-	
-	
+		
+		//op4 - save the order items in the orderitems table
+		
+		//op5 - save the order
+		orderRepo.save(order);
+	}
 	
 	
 	
@@ -120,17 +159,40 @@ class SpringDataJpaDemo2ApplicationTests {
 	
 //	@Test
 //	public void testCreateProduct() {
-//		Product product = new Product();
-//		product.setSku("654654654");
-//		product.setName("Mufti TShirt 4");
-//		product.setDescription("Some description4");
-//		product.setPrice(new BigDecimal(1800.50));
-//		product.setActive(true);
-//		product.setImageUrl("Someimageurl");
-//		System.out.println("inserting a product");
-//		productRepo.save(product);
+//		Product product1 = new Product();
+//		product1.setSku("8786574");
+//		product1.setName("Puma TShirt2");
+//		product1.setDescription("Some description4");
+//		product1.setPrice(new BigDecimal(1300.50));
+//		product1.setActive(true);
+//		product1.setImageUrl("Someimageurl");
+//		
+//		Product product2 = new Product();
+//		product2.setSku("54323333");
+//		product2.setName("Nike TShirt2");
+//		product2.setDescription("Some description4");
+//		product2.setPrice(new BigDecimal(900.50));
+//		product2.setActive(true);
+//		product2.setImageUrl("Someimageurl");
+//		
+//		Product product3 = new Product();
+//		product3.setSku("8767856");
+//		product3.setName("Adidas TShirt2");
+//		product3.setDescription("Some description4");
+//		product3.setPrice(new BigDecimal(2100.50));
+//		product3.setActive(true);
+//		product3.setImageUrl("Someimageurl");
+//		
+//
+//		List<Product> listProduct = new ArrayList<>();
+//		listProduct.add(product1);
+//		listProduct.add(product2);
+//		listProduct.add(product3);
+//		
+//		productRepo.saveAll(listProduct);
+//		
 //	}
-	
+//	
 //	@Test
 //	public void testUpdateProduct() {
 //		

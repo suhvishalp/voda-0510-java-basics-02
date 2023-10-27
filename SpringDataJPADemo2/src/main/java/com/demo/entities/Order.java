@@ -2,6 +2,8 @@ package com.demo.entities;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -13,6 +15,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -34,13 +37,9 @@ public class Order {
 	@JoinColumn(name = "FKShippingAddId", referencedColumnName = "id")
 	private Address shippingAddress;
 	
-	public Address getShippingAddress() {
-		return shippingAddress;
-	}
+	@OneToMany(cascade = CascadeType.ALL)
+	Set<OrderItem> orderItems = new HashSet<>(); 
 
-	public void setShippingAddress(Address shippingAddress) {
-		this.shippingAddress = shippingAddress;
-	}
 
 	@CreationTimestamp
 	private LocalDateTime dateCreated;
@@ -51,7 +50,27 @@ public class Order {
 	public Order() {
 		super();
 	}
+	
+	
+	public Set<OrderItem> getOrderItems() {
+		return orderItems;
+	}
 
+	public void setOrderItems(Set<OrderItem> orderItems) {
+		this.orderItems = orderItems;
+	}
+
+
+
+
+	public Address getShippingAddress() {
+		return shippingAddress;
+	}
+
+	public void setShippingAddress(Address shippingAddress) {
+		this.shippingAddress = shippingAddress;
+	}
+	
 	public long getId() {
 		return id;
 	}

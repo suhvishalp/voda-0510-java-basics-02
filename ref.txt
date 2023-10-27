@@ -2287,10 +2287,33 @@ Types of applications
                 - https://www.baeldung.com/intro-to-project-lombok
 
 
+        1                                                   *
+        public class Order {                                public class OrderItem {        
+
+            private long id;                                    private long orderItemId;
+            private String trackingNo;                          private int quantity;
+
+                                                                @OneToOne
+                                                                private Product product;
+            @OneToOne 
+            private Address shippingAddress;
+          
+            @OneToMany
+            List<OrderItem> orderItems;
+
+        }                                                   }
 
 
 
 
+        public class Product {
+            int id 
+            String sku 
+            double price 
+            ..
+            ..
+            ..
+        }
 
 
 

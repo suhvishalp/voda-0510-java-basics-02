@@ -13,6 +13,7 @@ import com.way2learnonline.service.BankService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"classpath:application-config.xml","classpath:test-infrastructure-config.xml"})
 public class BankServiceTests {
+	
 	@Autowired
 	private BankService bankService;	
 

@@ -2,15 +2,9 @@ drop table if exists transactiondetail ;
 drop table  if exists  beneficiaries;
 drop table  if exists  reward;
 drop table  if exists  account;
-drop table if exists auditlogs;
-
-CREATE TABLE `auditlogs` (                                 
-           `logmessage` varchar(1000) DEFAULT NULL                
-         );
-
 
 CREATE TABLE `account` (                                 
-           `accountNumber` bigint(20) NOT NULL AUTO_INCREMENT,    
+           `accountNumber` int(20) NOT NULL auto_increment,    
            `name` varchar(50) DEFAULT NULL,                       
            `isactive` tinyint(1) DEFAULT NULL,                    
            `city` varchar(50) DEFAULT NULL,                       
@@ -21,9 +15,9 @@ CREATE TABLE `account` (
          );
 
 CREATE TABLE `beneficiaries` (                                                                            
-                 `ssn` bigint(20) NOT NULL AUTO_INCREMENT,                                                               
+                 `ssn` int(20) NOT NULL auto_increment,                                                               
                  `name` varchar(50) DEFAULT NULL,                                                                        
-                 `accountnumber` bigint(20) NOT NULL,                                                                    
+                 `accountnumber` int(20) NOT NULL,                                                                    
                  PRIMARY KEY (`ssn`),                                                                                    
                  KEY `accountnumber` (`accountnumber`),                                                                  
                  CONSTRAINT `beneficiaries_ibfk_1` FOREIGN KEY (`accountnumber`) REFERENCES `account` (`accountNumber`)  
@@ -31,9 +25,9 @@ CREATE TABLE `beneficiaries` (
 
 
 CREATE TABLE `reward` (                                                                            
-          `rewardConfirmationNumber` bigint(20) NOT NULL AUTO_INCREMENT,                                   
+          `rewardConfirmationNumber` bigint(20) NOT NULL auto_increment,                                   
           `rewardAmount` int(11) DEFAULT NULL,                                                             
-          `accountNumber` bigint(20) DEFAULT NULL,                                                         
+          `accountNumber` int(20) DEFAULT NULL,                                                         
           PRIMARY KEY (`rewardConfirmationNumber`),                                                        
           KEY `accountNumber` (`accountNumber`),                                                           
           CONSTRAINT `reward_ibfk_1` FOREIGN KEY (`accountNumber`) REFERENCES `account` (`accountNumber`)  
@@ -41,8 +35,8 @@ CREATE TABLE `reward` (
 
 
 CREATE TABLE `transactiondetail` (                                                                            
-                     `transactionId` bigint(20) NOT NULL AUTO_INCREMENT,                                                         
-                     `accountNumber` bigint(20) DEFAULT NULL,                                                                    
+                     `transactionId` int(20) NOT NULL auto_increment,                                                         
+                     `accountNumber` int(20) DEFAULT NULL,                                                                    
                      `transactionDate` date DEFAULT NULL,                                                                        
                      `amount` int(11) DEFAULT NULL,                                                                              
                      `txtype` varchar(10) DEFAULT NULL,                                                                            
@@ -51,7 +45,5 @@ CREATE TABLE `transactiondetail` (
                      CONSTRAINT `transactiondetail_ibfk_1` FOREIGN KEY (`accountNumber`) REFERENCES `account` (`accountNumber`)  
                    );
 
-	insert into account(name,isactive,city,country,balance,emailaddress) 
-	values('shiva',true,'Bangalore','India',10000,'sivaprasad.valluru@gmail.com');
-	insert into account(name,isactive,city,country,balance,emailaddress) 
-	values('Prasad',true,'Hyderabad','India',20000,'siva@gmail.com');
+	insert into account(name,isactive,city,country,balance,emailaddress) values('shiva',true,'Bangalore','India',10000,'sivaprasad.valluru@gmail.com');
+	insert into account(name,isactive,city,country,balance,emailaddress) values('Prasad',true,'Hyderabad','India',20000,'siva@gmail.com');

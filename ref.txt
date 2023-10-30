@@ -2316,6 +2316,49 @@ Types of applications
         }
 
 
+        Fetch / Query operations with JPA 
+    -     ---------------------------------
+            - use Spring data jpa query methods 
+            - use @Query annotation and define the jpql query statements 
+            - use @NamedQuery annotation and define jpql query statemetns 
+            - use @Query annotation and define the native sql query statement 
+            - use the Criteria API in JPA to generte queries dynamically 
+
+
+        QueryDSL
+        ------------
+            - Querydsl is a framework which enables the construction of type-safe SQL-like queries for multiple backends including JPA, MongoDB and SQL in Java
+            - execute dynamic queries 
+            - to use QueryDSL we need add two dependencies in pom.xml file 
+                    - querydsl-jpa 
+                    - querydsl-apt 
+
+            -*querydsl-apt (Annotation Processing Tool)
+                - it automatically generates Q-Type class for each Entity 
+                    - using these qtypes we can generate dynamic quries 
+
+                    @Autowired 
+                    private EntityManager entityManager; 
+
+                    QProduct qProduct = QProduct.product;
+                    JPAQuery<Product> query = new JPAQuery(entityManager)
+
+                    query.from(qProduct).where(qProduct.price.between())
+
+
+        Transactions
+        ----------------
+
+            
+
+        
+        
+        Web Applications / REST API Application 
+
+            Spring MVC 
+
+            Spring REST 
+
 
 
 

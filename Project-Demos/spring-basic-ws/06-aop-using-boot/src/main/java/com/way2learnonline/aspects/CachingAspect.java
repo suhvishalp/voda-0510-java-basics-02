@@ -11,7 +11,7 @@ import com.way2learnonline.utils.CacheUtil;
 
 	
 	@Component
-	@Aspect
+//	@Aspect
 	public class CachingAspect {
 		
 		@Pointcut("execution(* com.way2learnonline.dao.CustomerDaoImpl.*(..))")

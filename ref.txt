@@ -2348,39 +2348,138 @@ Types of applications
 
         Transactions
         ----------------
-
+            TransactionManager
             
-
+            
+        Spring AOP 
+        --------------------
+            - aspect oriented programming 
+            - allows to perform "cross cutting" operations 
+            
         
-        
-        Web Applications / REST API Application 
+        Web Applications / Server side application / backend application 
 
+        Web application 
+            - returns a "view" along with "data"
+        
+        Web Services 
+        ---------------
+            - returns only "data"
+
+           a. SOAP Service - [Simple Object Access Protocol] 
+                - exchange data in the form of XML 
+
+           b. REST Service / REST API Application [Representational State Transfer.]
+                - exchange data in various formats like JSON
+                - REST supports XML, JSON, plain text, HTML.
+
+
+        Spring Web 
             Spring MVC 
 
             Spring REST 
 
 
 
+        @Controller     
+            - describes the class as a controller class which can have several 'handler methods'
+            - is used to create Web Controllers that returns 'views' 
+        
+        
+        @RESTController
+            - describes the class as a controller class which can have several 'handler methods'
+            - is used to create REST Controllers that returns 'data'
+
+
+
+        'handler methods'
+
+
+        Template Engines / View Engines 
+            - JSP 
+            - Thymeleaf
+            - Jade 
+            - ...
+            - .. 
+
+        REST API - Important Terms 
+        ---------------------------
+            - Resource 
+                - resource can be anything for which you explose an end point for 
+                - ideally all the entities/DTOs can be the resourses you develop the api endpoints for 
+
+                - E-Commerce Application 
+                ---------------------------
+                    - Product 
+                    - Order 
+                    - Cart
+                    - Customer 
+                    - ProductCategory 
+
+                    http://localhost:8080/api/products 
+
+
+            - Sub-Resource 
+                - the associated entities/DTOs 
+                - i.e. Product --> ProductCategories
+
+            - URI - Uniform resource identifier 
+                - the Resource can be identified by URI 
+
+                    http://localhost:8080/api/employees 
+
+            - HTTP Methods 
+                - GET
+                - POST 
+                - PUT 
+                - PATCH 
+                - DELETE 
+
+            - HTTP Status Codes 
+                    100-199       - informational 
+
+                    200-299       - Success 
+
+                        200     - Successful REsponse 
+                        201     - Created 
+
+                    300-399         - Redirection 
+
+                    400-499         - Client Errors 
+
+                        404     - Not Found 
+
+                    500-599         - Server errors 
 
 
 
 
+        @PathVariable
+            - used to bind a route parameter / path parameter with a variable 
+            - http://localhost:8080/employees/101
+
+        @RequestParam 
+            - used to bind a query parameters with a variable
+             http://localhost:8080/employees?city=Pune&salary=27700
+
+        @RequestBody 
+
+
+        @Getmapping / @PostMapping / @PutMapping / @PatchMapping / @DeleteMapping 
 
 
 
+        spring-boot-starter-validation 
+        -----------------------------
+            - it uses 'hibernate-validator' which sallows us to validate java beans with a few annotations as below 
 
-
-
-
-
-
-
-
-
-
-
-
-
+            @NotNull 
+            @NotEmpty 
+            @NotBlank 
+            @Email 
+            @Size 
+            @Pattern 
+            
 
 
 

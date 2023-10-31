@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 import com.way2learnonline.domain.Customer;
 
 	@Component
-	@Aspect
+//	@Aspect
 	public class LoggingAspect {
 		
 		

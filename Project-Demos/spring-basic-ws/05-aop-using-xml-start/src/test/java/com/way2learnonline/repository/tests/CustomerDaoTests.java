@@ -1,6 +1,6 @@
 package com.way2learnonline.repository.tests;
 
-import javax.annotation.Resource;
+//import javax.annotation.Resource;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,29 +15,29 @@ import com.way2learnonline.dao.CustomerDao;
 @ContextConfiguration(locations={"classpath:caching.xml"})
 public class CustomerDaoTests {
 	
-	@Resource(name="customerDao")
-	private CustomerDao customerDao;
+//	@Resource(name="customerDao")
+//	private CustomerDao customerDao;
 
 	
-	@Test
-	public void testGetAllCustomers() throws Exception {
-		
-		//customerDao.getAllCustomers();
-		//customerDao.getAllCustomers();
-		//customerDao.getAllCustomers();
-		
-		customerDao.getCustomerById(1);
-		customerDao.getCustomerById(1);
-		customerDao.getCustomerById(1);
-		customerDao.getCustomerById(1);
-		//customerDao.getAllCustomers();
-		/*
-		*/
-		//List<Customer> customers=customerDao.getAllCustomers();
-		
-//		assertNotNull(customers);
-		
-	}
+//	@Test
+//	public void testGetAllCustomers() throws Exception {
+//		
+//		//customerDao.getAllCustomers();
+//		//customerDao.getAllCustomers();
+//		//customerDao.getAllCustomers();
+//		
+//		customerDao.getCustomerById(1);
+//		customerDao.getCustomerById(1);
+//		customerDao.getCustomerById(1);
+//		customerDao.getCustomerById(1);
+//		//customerDao.getAllCustomers();
+//		/*
+//		*/
+//		//List<Customer> customers=customerDao.getAllCustomers();
+//		
+////		assertNotNull(customers);
+//		
+//	}
 	
 	
 

@@ -1,5 +1,10 @@
 package com.demo.entities;
 
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,6 +33,14 @@ public class Employee {
 	@Min(value = 0)
 	private double salary;
 	
+	private int age;
+	
+	@CreationTimestamp
+	private LocalDateTime dateCreated;
+	
+	@UpdateTimestamp
+	private LocalDateTime dateUpdated;
+	
 	public Employee() {
 		super();
 	}
@@ -39,7 +52,32 @@ public class Employee {
 		this.salary = salary;
 	}
 
+	
 
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public LocalDateTime getDateCreated() {
+		return dateCreated;
+	}
+
+	public void setDateCreated(LocalDateTime dateCreated) {
+		this.dateCreated = dateCreated;
+	}
+
+	public LocalDateTime getDateUpdated() {
+		return dateUpdated;
+	}
+
+	public void setDateUpdated(LocalDateTime dateUpdated) {
+		this.dateUpdated = dateUpdated;
+	}
 
 	public Long getId() {
 		return id;

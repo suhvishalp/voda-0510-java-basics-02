@@ -2393,6 +2393,8 @@ Types of applications
 
 
         'handler methods'
+            - methods mapped with specific http request 
+            - @Getmapping / @PostMapping / @PutMapping / @PatchMapping / @DeleteMapping 
 
 
         Template Engines / View Engines 
@@ -2463,15 +2465,22 @@ Types of applications
              http://localhost:8080/employees?city=Pune&salary=27700
 
         @RequestBody 
+            - binds the request payload / request body with the specific java object/parameter
+                 in the handler methods 
 
+       
+        Handle Exceptions 
+        -------------------
+            - local exceptional handler  
+                using @ExceptionHander annotation inside the controller 
 
-        @Getmapping / @PostMapping / @PutMapping / @PatchMapping / @DeleteMapping 
-
+            - global exception handler 
 
 
         spring-boot-starter-validation 
         -----------------------------
-            - it uses 'hibernate-validator' which sallows us to validate java beans with a few annotations as below 
+            - it uses 'hibernate-validator' which allows us to validate java beans with a 
+                few annotations as below 
 
             @NotNull 
             @NotEmpty 
@@ -2480,6 +2489,45 @@ Types of applications
             @Size 
             @Pattern 
             
+
+    Entity Class 
+        - represents the data you want to persist in the database 
+
+    DTO classes 
+        - Data transfer object 
+        - represents the request body or the response body 
+
+
+
+    Entity 
+        Product 
+
+    DTOs 
+        ProductDTO      -- represents the fields to be included in the response structure 
+        ProductCreationDTO - represents the fields for creating a product 
+
+
+
+        Employee                            Department 
+
+
+
+        Order                               OrderItems                  Product 
+
+
+        Post  1--------------------*        Comment 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

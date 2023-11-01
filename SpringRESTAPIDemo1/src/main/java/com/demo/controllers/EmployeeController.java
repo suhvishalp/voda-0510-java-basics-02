@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
+import com.demo.dto.EmployeeModel;
 import com.demo.entities.Employee;
 import com.demo.exceptions.CustomFieldError;
 import com.demo.exceptions.EmployeeNotFoundException;
@@ -83,12 +84,19 @@ public class EmployeeController {
 	}
 	
 	
-	
+	//POST  - /api/employees { }
 	@PostMapping()
-	public Employee createEmployee(@Valid @RequestBody Employee emp) {
+	public ResponseEntity<EmployeeModel> createEmployee(@Valid @RequestBody EmployeeModel empModel) {
 		
+		Employee emp = new Employee();
+		emp.setName(empModel.getName());
+		emp.setCity(empModel.getCity());
+		emp.setSalary(empModel.getSalary());
+		
+		Employee empCreated = empService.saveEmployee(emp);
+		EmployeeModel em = new EmployeeModel(empCreated.getName(), empCreated.getCity(), empCreated.getSalary());
 		 
-		return empService.saveEmployee(emp);
+		return new ResponseEntity<EmployeeModel>(em, HttpStatus.OK);
 	}
 	
 	

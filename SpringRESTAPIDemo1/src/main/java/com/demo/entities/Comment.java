@@ -23,6 +23,20 @@ public class Comment {
 		super();
 	}
 
+	
+	
+	public Post getPost() {
+		return post;
+	}
+
+
+
+	public void setPost(Post post) {
+		this.post = post;
+	}
+
+
+
 	public long getId() {
 		return id;
 	}

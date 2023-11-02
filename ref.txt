@@ -2529,12 +2529,65 @@ Types of applications
         - using Spring REST Docs 
 
 
+    Spring Security 
+    ------------------
+        - Spring Security is a powerful and highly customizable authentication and access-control framework
+        - Spring Security is a framework that focuses on providing both authentication and authorization to Java applications.
+
+    - you can add the spring-security module to the existing spring boot project 
+    	<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+    - after adding this dependency to the project, spring boot auto-configuration will automatically 
+        configure "spring security beans" and enable the "default configuration" 
+    
+    Authentication 
+        - is a user valid ? 
+
+    Authorization 
+        - define roles to perform some actions 
+        - manage permissions 
+
+    Standards in Authentication & Authorization
+    --------------------------------------------
+        - Basic HTTP Authentication
+            - this is the default configuration in spring security 
+
+        - OAuth 2.0 Login - OAuth 2.0 Log In with OpenID Connect and non-standard OAuth 2.0 Login (i.e. GitHub)
+
+        - SAML 2.0 Login - SAML 2.0 Log In
+
+
+      
+        
+    Authentication Providers 
+    ---------------------------
+
+    Auth-Servers 
+    ---------------
+
+
+    Authentication flows 
+    ---------------------
+        - client credentials flow  
+        - password flow 
+        - annonymous token flow 
+        - refresh token flow 
+        - 
 
 
 
 
-
-
+    CSRF - cross site request forgery
+    CORS 
+    JWT & OAuth2
+    Session Fixation 
+    Brute Force 
+    Stealing of data 
+    fine grained security 
+    users and roles 
 
 
 

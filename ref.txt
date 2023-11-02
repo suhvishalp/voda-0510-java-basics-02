@@ -2553,7 +2553,14 @@ Types of applications
     Standards in Authentication & Authorization
     --------------------------------------------
         - Basic HTTP Authentication
-            - this is the default configuration in spring security 
+          
+            1. Basic Authentication
+                 - this is the default configuration in spring security 
+                 - by default uses InMemoryUserDetailsManager() to store the users , we can configure the users either in application.properites 
+                     or we can also configure the users in java code (refer to the UserDetailsService Bean in config class)
+            
+            2. Database Authentication 
+                - we can create a custom UserDetailsService
 
         - OAuth 2.0 Login - OAuth 2.0 Log In with OpenID Connect and non-standard OAuth 2.0 Login (i.e. GitHub)
 
@@ -2602,3 +2609,10 @@ Types of applications
 
    
  
+
+
+    users    *-------------*        roles 
+    suyash                          ADMIN
+    rohit                           ADMIN
+                                    Manager 
+                                    Manager

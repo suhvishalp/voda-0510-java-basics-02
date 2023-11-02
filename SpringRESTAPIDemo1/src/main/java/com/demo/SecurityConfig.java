@@ -28,7 +28,7 @@ public class SecurityConfig {
 		
 		http.csrf().disable()
 			.authorizeHttpRequests( (authorize) -> authorize
-					.requestMatchers(HttpMethod.GET, "/api/posts/**").permitAll()
+//					.requestMatchers(HttpMethod.GET, "/api/posts/**").permitAll()
 					.anyRequest().authenticated()
 						
 				)
@@ -39,23 +39,23 @@ public class SecurityConfig {
 		return http.build();		//DefaultSecurityFilterChain
 	}
 	
-	@Bean
-	public UserDetailsService userDetailsService() {
-		
-		UserDetails user1 = User.builder()
-									.username("admin")
-									.password(passwordEncoder().encode("admin"))
-									.roles("ADMIN")
-									.build();
-		
-		UserDetails user2 = User.builder()
-				.username("abc")
-				.password(passwordEncoder().encode("abc"))
-				.roles("GUEST")
-				.build();
-		
-		return new InMemoryUserDetailsManager(user1, user2);
-		
-	}
-	
+//	@Bean
+//	public UserDetailsService userDetailsService() {
+//		
+//		UserDetails user1 = User.builder()
+//									.username("admin")
+//									.password(passwordEncoder().encode("admin"))
+//									.roles("ADMIN")
+//									.build();
+//		
+//		UserDetails user2 = User.builder()
+//				.username("abc")
+//				.password(passwordEncoder().encode("abc"))
+//				.roles("GUEST")
+//				.build();
+//		
+//		return new InMemoryUserDetailsManager(user1, user2);
+//		
+//	}
+//	
 }

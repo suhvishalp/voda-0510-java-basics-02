@@ -60,28 +60,7 @@ public class EmployeeController {
 	}
 	
 	
-	@ExceptionHandler(EmployeeNotFoundException.class)
-	public ResponseEntity<ErrorObject> handleEmpExpcetion(EmployeeNotFoundException ex) {
-		
-		ErrorObject error = new ErrorObject();
-		error.setMessage(ex.getMessage());
-		error.setPath("/api/employees/{empId}");
-		error.setTimeStamp(LocalDateTime.now());
-		error.setStatusCode(HttpStatus.NOT_FOUND.value());
-		
-		return new ResponseEntity<ErrorObject>(error, HttpStatus.NOT_FOUND);
-	}
 	
-	@ExceptionHandler(MethodArgumentTypeMismatchException.class)
-	public ResponseEntity<ErrorObject> handleMethodArgumentMismatchException(MethodArgumentTypeMismatchException ex){
-		ErrorObject error = new ErrorObject();
-		error.setMessage(ex.getMessage());
-		error.setPath("/api/employees/{empId}");
-		error.setTimeStamp(LocalDateTime.now());
-		error.setStatusCode(HttpStatus.BAD_REQUEST.value());
-		
-		return new ResponseEntity<ErrorObject>(error, HttpStatus.BAD_REQUEST);
-	}
 	
 	
 	//POST  - /api/employees { }
@@ -100,29 +79,6 @@ public class EmployeeController {
 	}
 	
 	
-	@ExceptionHandler(MethodArgumentNotValidException.class)
-	public ResponseEntity<InvalidRequestBodyError> handleInvalidRequestBodyException(MethodArgumentNotValidException ex){
-		
-		InvalidRequestBodyError invalidReqBodyError = new InvalidRequestBodyError();
-
-		List<FieldError> errors =  ex.getFieldErrors();
-		
-		List<CustomFieldError> fieldErrors = errors.stream()
-												.map(error -> new CustomFieldError(
-														error.getField(),
-														error.getDefaultMessage()
-														))
-												.collect(Collectors.toList());
-		
-		invalidReqBodyError.setFieldErrors(fieldErrors);
-		invalidReqBodyError.setTimeStamp(LocalDateTime.now());
-		invalidReqBodyError.setPath("/employee");
-		invalidReqBodyError.setMessage(ex.getMessage());
-		invalidReqBodyError.setStatusCode(HttpStatus.BAD_REQUEST.value());
-		
-		
-		return new ResponseEntity<InvalidRequestBodyError>(invalidReqBodyError, HttpStatus.BAD_REQUEST);
-	}
 	
 	
 	

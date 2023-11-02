@@ -2,8 +2,6 @@ package com.demo.exceptions;
 
 import java.time.LocalDateTime;
 
-import org.springframework.http.HttpStatus;
-
 public class ErrorObject {
 
 	private LocalDateTime timeStamp;

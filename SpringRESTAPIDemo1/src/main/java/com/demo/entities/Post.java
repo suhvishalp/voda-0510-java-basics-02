@@ -1,48 +1,67 @@
 package com.demo.entities;
 
-import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 
 @Entity
+@Table(
+        name = "posts", uniqueConstraints = {@UniqueConstraint(columnNames = {"title"})}
+)
 public class Post {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	private String title;
-	private String description;
-	private String content;
-	
-	@OneToMany(cascade = CascadeType.ALL ,fetch = FetchType.LAZY, mappedBy = "post")
-	private Set<Comment> comments = new HashSet<>();
-	
-	@CreationTimestamp
-	private LocalDateTime dateCreated;
-	
-	@UpdateTimestamp
-	private LocalDateTime dateUpdated;
+    @Id
+    @GeneratedValue(
+            strategy = GenerationType.IDENTITY
+    )
+    private Long id;
+
+    @Column(name = "title", nullable = false)
+    private String title;
+
+    @Column(name = "description", nullable = false)
+    private String description;
+
+    @Column(name = "content", nullable = false)
+    private String content;
+
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Comment> comments = new HashSet<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    private Category category;
 
 	public Post() {
 		super();
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -70,22 +89,22 @@ public class Post {
 		this.content = content;
 	}
 
-	public LocalDateTime getDateCreated() {
-		return dateCreated;
+	public Set<Comment> getComments() {
+		return comments;
 	}
 
-	public void setDateCreated(LocalDateTime dateCreated) {
-		this.dateCreated = dateCreated;
+	public void setComments(Set<Comment> comments) {
+		this.comments = comments;
 	}
 
-	public LocalDateTime getDateUpdated() {
-		return dateUpdated;
+	public Category getCategory() {
+		return category;
 	}
 
-	public void setDateUpdated(LocalDateTime dateUpdated) {
-		this.dateUpdated = dateUpdated;
+	public void setCategory(Category category) {
+		this.category = category;
 	}
-	
-	
-	
+    
+    
+    
 }

@@ -2072,6 +2072,7 @@ Types of applications
                     |
                 interface CrudRepository<T, ID>    
                     |
+                    |-> describes common methods to perform CRUD operations
                     |-> <S extends T> S save(S entity) ->Saves a given entity
                     |-> Optional<T> findById(ID id) -> Retrieves an entity by its id.
                     |-> Iterable<T> findAll() -> Returns all instances of the type.
@@ -2515,13 +2516,17 @@ Types of applications
         Order                               OrderItems                  Product 
 
 
-        Post  1--------------------*        Comment 
+        Post        1--------------------*      Comment 
+
+        OneToMany                               ManyToOne
 
 
 
-
-
-
+    Rest API Documentation 
+    ---------------------------
+        - using swagger 
+        - using openAPI 
+        - using Spring REST Docs 
 
 
 

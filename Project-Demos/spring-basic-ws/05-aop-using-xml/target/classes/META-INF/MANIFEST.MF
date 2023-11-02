@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Built-By: vishalshah
-Build-Jdk: 17.0.6
-Implementation-Title: 05-aop-using-xml
-Implementation-Version: 0.0.1-SNAPSHOT
-Implementation-Vendor-Id: com.way2learnonline
-Implementation-Vendor: Pivotal Software, Inc.
-Created-By: Maven Integration for Eclipse
-

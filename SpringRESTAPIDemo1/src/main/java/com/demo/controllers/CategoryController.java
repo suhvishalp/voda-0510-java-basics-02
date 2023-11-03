@@ -28,7 +28,7 @@ public class CategoryController {
     }
 
     // Build Add Category REST API
-    @PreAuthorize("hasRole('ADMIN')")
+   @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping
     public ResponseEntity<CategoryDto> addCategory(@RequestBody CategoryDto categoryDto){
         CategoryDto savedCategory = categoryService.addCategory(categoryDto);

@@ -1,5 +1,6 @@
 package com.demo.security;
 
+import java.util.Base64;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -30,15 +31,22 @@ public class CustomUserDetailsService implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
 		
+	  System.out.println("using database authentication : " + username);
+		
 	  User user =	userRepository.findByNameOrEmail(username, username)
 					.orElseThrow(() -> 
 						new UsernameNotFoundException(username + " not found in the databse"));
 	  
+	  System.out.println(user);
+	  
+//	  System.out.println(user.getRoles());
+	  
 	  Set<GrantedAuthority> authorities = user.getRoles().stream()
 								  			.map(role -> new SimpleGrantedAuthority(role.getName()))
 								  			.collect(Collectors.toSet());		
-		
-		return new org.springframework.security.core.userdetails.User(user.getName(), user.getPassword(), authorities);
+	  
+	  
+		return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), authorities);
 	}
 
 }

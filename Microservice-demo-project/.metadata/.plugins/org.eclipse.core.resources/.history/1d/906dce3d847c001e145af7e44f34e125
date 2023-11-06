@@ -1,0 +1,30 @@
+package com.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.demo.entities.Department;
+import com.demo.repositories.DepartmentRepository;
+
+public class DepartmentService {
+
+	
+	@Autowired
+	private DepartmentRepository departmentRepository;
+	
+	
+	//save a Department
+	public Department save(Department department) {
+		///
+		
+		return null;
+	}
+	
+	//get a department by the give code 
+	
+	//get a department by id 
+	
+	//get all departments 
+	
+	
+	
+}

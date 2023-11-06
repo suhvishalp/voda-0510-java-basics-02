@@ -1,0 +1,13 @@
+package com.demo.entities;
+
+public class Department {
+	
+	private Long id;
+	private String deptName;
+	private String description;
+	private String deptCode;
+	
+	
+	
+
+}

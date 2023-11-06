@@ -2616,3 +2616,99 @@ Types of applications
     rohit                           ADMIN
                                     Manager 
                                     Manager
+
+
+
+    Monolethic Architecture 
+        - If all the functionalities of a project exist in a single codebase
+        - It becomes too large with time and hence, difficult to manage.
+        - We need to redeploy the whole application, even for a small change.
+        - As the size of the application increases, its start-up and deployment time also increases.
+        - It is not very reliable, as a single bug in any module can bring down the entire monolithic application.
+
+
+    - problems with monolith 
+        - application is too large (large code base)
+        - the parts / modules are tightly coupled with each other 
+        - only scale the entire app, cannot scale independent parts 
+        - update / release takes longer time 
+        - bug in one module can potentially bring down the entire app 
+
+
+
+    Microservices 
+        - also known as the microservice architecture - is an architectural style that structures an application as a collection of services that are:
+            - Independently deployable
+            - Loosely coupled
+            - Organized around business capabilities
+            - Owned by a small team
+
+    Microservices 
+        - small autonouous services that work together 
+        - break the application into multiple smaller independent parts / modules that can communiate with each other 
+
+
+        - challeges in microservice
+        ------------------------------
+            1. how to break the application into smaller parts? 
+                - define the business functinalities and each service should be responsible to implement those functionalities 
+
+            2. what codes goes where?
+                - separation of concern 
+                
+
+            3. How many services we should create? 
+                    - 1 service for 1 job 
+
+            4. how does these services communicate with each other? 
+                - the communication can be 
+                    a. Synchronous 
+                          - RestTemplate, WebClient, Spring Cloud Openfeign library etc.  
+                    b. Asynchronous 
+                        - messaging services i.e.. RabbitMQ, AWS SQS, AWS SNS, Kafka, GCP Pub-Sub, Azure Service Bus etc. 
+
+
+
+    Spring Cloud Project 
+    --------------------
+        - Spring Cloud provides tools for developers to quickly build some of the common 
+                patterns in distributed systems / microservice service based systems 
+
+
+        1. Spring Cloud Config
+            - Distributed/versioned configuration 
+
+        2. Spring Cloud Netflix
+            - Service registration and discovery 
+
+        3. Spring Cloud Openfeign 
+            - Service-to-service calls
+
+        4. Spring Cloud Gateway
+            - implement API Gateway, Security etc. 
+
+        5. Spring Cloud Circuit Breaker 
+            - implement resiliency in microservices 
+
+
+
+
+
+
+
+    department-service 
+        - port : 8081 
+
+    employee-service 
+        - port : 9091 
+
+    
+
+
+
+
+
+
+  
+
+  REF: https://github.com/RameshMF/BookStoreApp-Distributed-Application

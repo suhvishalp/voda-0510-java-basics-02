@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.dto.LoginDto;
+import com.demo.dto.RegisterDto;
 import com.demo.services.AuthService;
 
 
@@ -24,6 +25,13 @@ public class AuthController {
 		
 		String response = authService.login(loginDto);
 		
+		return new ResponseEntity<String>(response, HttpStatus.OK);
+	}
+	
+	
+	@PostMapping("/register")
+	public ResponseEntity<String> register(@RequestBody RegisterDto registerDto){
+		String response = authService.register(registerDto);
 		return new ResponseEntity<String>(response, HttpStatus.OK);
 	}
 }

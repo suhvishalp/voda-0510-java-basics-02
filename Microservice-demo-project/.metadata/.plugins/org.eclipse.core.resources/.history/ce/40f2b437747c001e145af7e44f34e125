@@ -1,0 +1,5 @@
+package com.demo.repositories;
+
+public interface DepartmentRepository {
+
+}

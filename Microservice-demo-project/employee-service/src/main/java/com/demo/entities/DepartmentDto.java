@@ -5,6 +5,8 @@ public class DepartmentDto {
     private String departmentName;
     private String departmentDescription;
     private String departmentCode;
+    private String serverPort;
+    
 	public DepartmentDto() {
 		super();
 	}
@@ -15,6 +17,17 @@ public class DepartmentDto {
 		this.departmentName = departmentName;
 		this.departmentDescription = departmentDescription;
 		this.departmentCode = departmentCode;
+	}
+	
+	
+
+
+	public String getServerPort() {
+		return serverPort;
+	}
+
+	public void setServerPort(String serverPort) {
+		this.serverPort = serverPort;
 	}
 
 	public Long getId() {

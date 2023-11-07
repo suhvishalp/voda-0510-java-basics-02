@@ -2682,13 +2682,45 @@ Types of applications
             - Service registration and discovery 
 
         3. Spring Cloud Openfeign 
-            - Service-to-service calls
+            - library to make service-to-service calls
 
         4. Spring Cloud Gateway
             - implement API Gateway, Security etc. 
 
         5. Spring Cloud Circuit Breaker 
             - implement resiliency in microservices 
+
+
+
+
+     Interservice communication 
+     ------------------------------
+        a. Synchronous
+                 1. using RestTemplate 
+                        - **Note: under maintainance at the moment 
+
+                 2. using WebClient 
+                        - use this class to make sync as well as async operations 
+
+                 3. using Spring Cloud Openfeign 
+                        - library to implement http communication between two services / applications 
+
+
+        b. Asynchronous
+                - Apache Kafka 
+                - RabbitMQ 
+                - AWS SQS / AWS Kinesis 
+                - GCP Pub-sub 
+                - Azure Service Bus 
+                - ..
+                
+
+
+        **How to handle Async tasks in java 
+            - CompletableFuture 
+            - Completionstage 
+            - REF : https://saranganjana.medium.com/completable-future-in-java-fb7b578cf1b0#:~:text=CompletableFuture%20in%20Java%20is%20used,main%20thread%20to%20continue%20executing.
+            - REF : https://www.baeldung.com/java-completablefuture
 
 
 

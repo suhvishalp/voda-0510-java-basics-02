@@ -1,0 +1,48 @@
+package com.demo.entities;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration()
+public class DepartmentConfig {
+	
+	@Value("${departmentCode}")
+	private String departmentCode;
+	
+	@Value("${departmentManager}")
+	private String departmentManager;
+	
+	@Value("${departmentStatus}")
+	private boolean departmentStatus;
+	
+	public DepartmentConfig() {
+		super();
+	}
+
+	public String getDepartmentCode() {
+		return departmentCode;
+	}
+
+	public void setDepartmentCode(String departmentCode) {
+		this.departmentCode = departmentCode;
+	}
+
+	public String getDepartmentManager() {
+		return departmentManager;
+	}
+
+	public void setDepartmentManager(String departmentManager) {
+		this.departmentManager = departmentManager;
+	}
+
+	public boolean isDepartmentStatus() {
+		return departmentStatus;
+	}
+
+	public void setDepartmentStatus(boolean departmentStatus) {
+		this.departmentStatus = departmentStatus;
+	}
+	
+	
+
+}

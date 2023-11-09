@@ -1,0 +1,25 @@
+
+spring.application.name=api-gateway
+
+server.port=9999
+
+eureka.instance.hostname=localhost
+eureka.client.register-with-eureka=true
+eureka.client.fetch-registry=true
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
+
+management.endpoint.gateway.enabled=true
+management.endpoints.web.exposure.include=gateway
+
+spring.cloud.gateway.discovery.locator.enabled=true
+
+##route configuration for employee service
+#spring.cloud.gateway.routes[0].id=EMPLOYEE-SERVICE
+#spring.cloud.gateway.routes[0].uri=lb://EMPLOYEE-SERVICE
+#spring.cloud.gateway.routes[0].predicates[0]=Path=/api/employees/**
+#
+#
+##route configuration for department service
+#spring.cloud.gateway.routes[1].id=DEPARTMENT-SERVICE
+#spring.cloud.gateway.routes[1].uri=lb://DEPARTMENT-SERVICE
+#spring.cloud.gateway.routes[1].predicates[0]=Path=/api/departments/**

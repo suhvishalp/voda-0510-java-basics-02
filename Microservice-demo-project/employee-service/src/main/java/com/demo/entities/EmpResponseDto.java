@@ -5,6 +5,8 @@ public class EmpResponseDto {
 	private EmployeeDto empDto;
 	private DepartmentDto deptDto;
 	
+	private String serverPort;
+	
 	public EmpResponseDto() {
 		super();
 	}
@@ -12,6 +14,26 @@ public class EmpResponseDto {
 	
 	
 	
+
+
+
+	public String getServerPort() {
+		return serverPort;
+	}
+
+
+
+
+
+
+
+	public void setServerPort(String serverPort) {
+		this.serverPort = serverPort;
+	}
+
+
+
+
 
 
 

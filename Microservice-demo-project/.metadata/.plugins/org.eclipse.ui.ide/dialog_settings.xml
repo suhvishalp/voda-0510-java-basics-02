@@ -78,7 +78,11 @@
 		<item value="org.jboss.tools.m2e.wro4j.feature:1.2.1.202301111328"/>
 	</list>
 	<section name="ChooseWorkspaceDialogSettings">
-		<item key="DIALOG_X_ORIGIN" value="547"/>
-		<item key="DIALOG_Y_ORIGIN" value="536"/>
+		<item key="DIALOG_X_ORIGIN" value="528"/>
+		<item key="DIALOG_Y_ORIGIN" value="212"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
 	</section>
 </section>

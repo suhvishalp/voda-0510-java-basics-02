@@ -1,6 +1,7 @@
 package com.demo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,9 @@ import com.demo.services.EmployeeService;
 @RestController
 @RequestMapping("/api/employees")
 public class EmployeeController {
+	
+	@Autowired
+	private ServerProperties serverProperties;
 
 	@Autowired
     private EmployeeService employeeService;
@@ -32,6 +36,9 @@ public class EmployeeController {
     @GetMapping("/{id}")
     public ResponseEntity<EmpResponseDto> getEmployee(@PathVariable("id") Long employeeId){
     	EmpResponseDto empResponseDto = employeeService.getEmployeeById(employeeId);
+    	
+    	empResponseDto.setServerPort("Port no : " + serverProperties.getPort());
+    	
         return new ResponseEntity<>(empResponseDto, HttpStatus.OK);
     }
 }

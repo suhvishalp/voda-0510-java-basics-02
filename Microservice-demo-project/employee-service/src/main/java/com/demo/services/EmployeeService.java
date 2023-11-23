@@ -104,6 +104,21 @@ public class EmployeeService {
         
        return empResponseDto;
     }
+    
+    public EmpResponseDto getEmployeeByIdFallback(Long employeeId) {
+
+        Employee employee = employeeRepository.findById(employeeId).get();
+
+   
+        EmpResponseDto empResponseDto = new EmpResponseDto();
+        empResponseDto.setDeptDto(null);
+        
+        EmployeeDto employeeDto = EmployeeMapper.mapToEmployeeDto(employee);
+
+        empResponseDto.setEmpDto(employeeDto);
+        
+       return empResponseDto;
+    }
 
     
 }

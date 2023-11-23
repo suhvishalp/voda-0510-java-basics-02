@@ -73,6 +73,8 @@ public class AuthService {
 		
 		userRepository.save(user);
 		
+		//should generate an auth token and return it to the client
+		
 		return "User Registered successfully";
 	}
 }

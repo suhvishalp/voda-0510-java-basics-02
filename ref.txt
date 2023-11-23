@@ -2723,17 +2723,70 @@ Types of applications
             - REF : https://www.baeldung.com/java-completablefuture
 
 
+        Spring Boot Actuator 
+        -----------------------
+            - this library exposes some important endpoints to help monitoring the application 
+
+
+        Spring Cloud Gateway
+        --------------------
+            - Spring Cloud Gateway aims to provide a simple, yet effective way to route to APIs and 
+                provide cross cutting concerns to them such as: security, monitoring/metrics, 
+                    and resiliency.
+
+
+
+        Circuit Breaker Pattern
+        -------------------------
+            - The circuit breaker pattern is an application resiliency pattern used to limit the amount of requests to a service based on configured thresholds — helping to prevent the service from being overloaded.  
+
+
+        - retry pattern 
+
+        - rate limit pattern 
+
+        - Bulkhead Pattern
+
+        - 
+
+
+    Docker 
+    -----------
+        - tool to isolate your application code and execute your application in the form of 
+            distributed system 
+        - it also helps to automate the deployment 
+        - it runs your application inside a "sandbox/container" that runs on any operating system 
+
+    Docker Image 
+    ----------------
+        - iso image, a self execuatable package including your code + runtime + libraries required 
+                to run your code 
+
+            - java application - 1000 classes - compile -> build .jar / .war 
+
+        - once the docker image is created, we can store the image....
+             1. on our local machine 
+             2. on public "docker hub"
+             3. on private image repository i.e. private git, aws container registry, etc.
+
+
+        - how to create a docker image 
+            1. using 'Dockerfile' and some docker commands 
+                    docker build 
+
+            
+    Docker Container 
+    -------------------
+        - a container is an instance of the docker image which executes the application 
+            in an isolated environment on any platform
+
+
+    jenkins 
+    -----------
+        - Jenkins is a self-contained, open source automation server which 
+            can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software.
+
         
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2748,6 +2801,35 @@ Types of applications
 
     
 
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/suhvishalp/parent-demo-repo.git
+git push -u origin main
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2756,3 +2838,24 @@ Types of applications
   
 
   REF: https://github.com/RameshMF/BookStoreApp-Distributed-Application
+
+
+
+Group 1 - Rohit-Team
+Rohit - https://github.com/RohitBikkad/Group1-Rohit-Product-Service 
+Vaibhav - https://github.com/vaibhavRpisal/Group1-vaibhav-order-service 
+Pranjal - https://github.com/Pranjalkoli26/Group1-Pranjal-User-Service 
+Samrat - https://github.com/SamratIngle/Group1-Samrat-Payment-service
+
+GROUP2-SUYASH-TEAM
+Suyash : https://github.com/Suyash777/group2-suyash-product-service.git
+Om     : https://github.com/omshigwan/group2-om-user-service.git
+Skanda : https://github.com/19ska/group2-skanda-order-service.git
+Mohit  : https://github.com/mohitm018/group2-mohit-payment-service.git
+
+
+Group3-Adarsh-Team
+Adarsh:- https://github.com/adarskumar1205/Group3-Adarsh-Product-Service
+Yashasvi:- https://github.com/paunikaryashasvi/Group3-yashasvi-order-service
+Pranisha:- https://github.com/Pranisha01/Group3-Pranisha-User-Service  
+Onkar:- https://github.com/Onkartayde21/Group3-Onkar-Payment-Service 

@@ -1,0 +1,32 @@
+
+spring.application.name=employee-service
+server.port=9091
+
+spring.config.import=optional:configserver:http://localhost:8888
+
+spring.datasource.url=jdbc:mysql://localhost:3306/mydb
+spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
+spring.datasource.username=root
+spring.datasource.password=root123123
+
+
+#none / create-only / drop / create-drop, validate, update
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true 
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.generate-ddl=true
+
+eureka.instance.hostname=localhost
+eureka.client.register-with-eureka=true
+eureka.client.fetch-registry=true
+
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
+
+#configuration for circuit breaker instance - getEmployee
+resilience4j.circuitbreaker.instances.getEmployee.register-health-indicator=true 
+resilience4j.circuitbreaker.instances.getEmployee.failure-rate-threshold=3
+resilience4j.circuitbreaker.instances.getEmployee.minimum-number-of-calls=2
+resilience4j.circuitbreaker.instances.getEmployee.max-wait-duration-in-half-open-state=60s
+resilience4j.circuitbreaker.instances.getEmployee.automatic-transition-from-open-to-half-open-enabled=true
+resilience4j.circuitbreaker.instances.getEmployee.wait-duration-in-open-state=60s
+resilience4j.circuitbreaker.instances.getEmployee.permitted-number-of-calls-in-half-open-state=0
